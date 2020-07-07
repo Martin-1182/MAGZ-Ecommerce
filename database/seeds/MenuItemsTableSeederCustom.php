@@ -333,7 +333,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'Blog',
-                'url'     => '#',
+                'url'     => 'https://blog.laravelecommerceexample.ca',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {
@@ -373,7 +373,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'fa-globe',
-                'url'     => 'https://halaj.online',
+                'url'     => 'http://andremadarang.com',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {
@@ -389,7 +389,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'fa-youtube',
-                'url'     => '#',
+                'url'     => 'http://youtube.com/drehimself',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {
@@ -405,7 +405,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'fa-github',
-                'url'     => 'hhttps://github.com/Martin-1182/MAGZ-E-commerce',
+                'url'     => 'http://github.com/drehimself',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {
@@ -421,7 +421,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'fa-twitter',
-                'url'     => '#',
+                'url'     => 'http://twitter.com/drehimself',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {

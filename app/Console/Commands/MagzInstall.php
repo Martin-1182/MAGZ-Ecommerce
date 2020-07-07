@@ -19,7 +19,7 @@ class MagzInstall extends Command
      *
      * @var string
      */
-    protected $description = 'Install dummy data for the MAGZ E-Commerce Application';
+    protected $description = 'Install dummy data for the Ecommerce Application';
 
     /**
      * Create a new command instance.
@@ -34,7 +34,7 @@ class MagzInstall extends Command
     /**
      * Execute the console command.
      *
-     * @return int
+     * @return mixed
      */
     public function handle()
     {
@@ -126,6 +126,15 @@ class MagzInstall extends Command
 
         $this->call('db:seed', [
             '--class' => 'UsersTableSeederCustom',
+            '--force' => true,
+        ]);
+
+        $this->call('db:seed', [
+            '--class' => 'SettingsTableSeederCustom',
+            '--force' => true,
+        ]);
+        $this->call('db:seed', [
+            '--class' => 'TranslationsTableSeeder',
             '--force' => true,
         ]);
 
