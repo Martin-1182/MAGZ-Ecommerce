@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ShopController extends Controller
 {
@@ -19,10 +20,10 @@ class ShopController extends Controller
         $categories = Category::all();
 
         if (request()->category) {
-            $products = Product::with('categories')->whereHas('categories', function($query) {
+            $products = Product::with('categories')->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
             });
-            $categoryName = optional($categories->where('slug', request()->category)->first()) ->name;
+            $categoryName = optional($categories->where('slug', request()->category)->first())->name;
         } else {
             $products = Product::where('featured', true);
             $categoryName = 'Featured';
@@ -31,7 +32,7 @@ class ShopController extends Controller
             $products = $products->orderBy('price')->paginate($pagination);
         } elseif (request()->sort == 'high_low') {
             $products = $products->orderBy('price', 'desc')->paginate($pagination);
-        }else {
+        } else {
             $products = $products->paginate($pagination);
         }
         return view('shop')->with([
@@ -78,6 +79,15 @@ class ShopController extends Controller
             'product' => $product,
             'mightAlsoLike' => $mightAlsoLike,
         ]);
+    }
+    public function search(Request $request)
+    {
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+        $query = $request->input('query');
+        $products = Product::search($query)->paginate(10);
+        return view('search-results')->with('products', $products);
     }
 
     /**

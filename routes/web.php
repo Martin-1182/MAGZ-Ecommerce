@@ -58,3 +58,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-orders', 'OrdersController@index')->name('orders.index');
     Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
 });
+
+Route::get('/mailable', function () {
+    $order = App\Order::find(1);
+    return new App\Mail\OrderPlaced($order);
+});
+
+Route::get('/search', 'ShopController@search')->name('search');
