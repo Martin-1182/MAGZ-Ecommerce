@@ -64,21 +64,11 @@
                 <a href="#" class="button">Featured</a>
                 <a href="#" class="button">On Sale</a>
             </div>
-
-            {{-- <div class="tabs">
-                    <div class="tab">
-                        Featured
-                    </div>
-                    <div class="tab">
-                        On Sale
-                    </div>
-                </div> --}}
-
             <div class="products text-center">
                 @foreach ($products as $product)
                 <div class="product">
-                    <a href="{{ route('shop.show', $product->slug) }}"><img
-                            src="{{ asset('storage/'.$product->image) }}" alt="product"></a>
+                    <a href="{{ route('shop.show', $product->slug) }}">
+                        <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}"></a>
                     <a href="{{ route('shop.show', $product->slug) }}">
                         <div class="product-name">{{ $product->name }}</div>
                     </a>

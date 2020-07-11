@@ -752,17 +752,29 @@ form button[type=submit] {
 }
 
 .search-icon {
-  color: gray;
+  height: 16px;
+  width: 16px;
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  fill: #e4e4e4;
 }
 
 .search-box {
-  padding: 10px 12px 10px 34px;
   width: 400px;
-  max-width: 100%;
-  font-size: 14px;
+  padding: 12px 28px 12px 12px;
+  border: 2px solid #e4e4e4;
+  border-radius: 4px;
+  transition: 0.2s;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 4px 4px 0 rgba(241, 241, 241, 0.35);
+  font-size: 12px;
+  box-sizing: border-box;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 header.with-background {
@@ -1309,5 +1321,57 @@ h1.checkout-heading {
 
 .search-results-count {
   margin-bottom: 20px;
+}
+
+.search-results-container-algolia {
+  min-height: 400px;
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  grid-gap: 20px;
+}
+
+.ais-hits--item .instantsearch-result {
+  display: flex;
+  align-items: center;
+}
+
+.ais-hits--item .instantsearch-result img {
+  margin-right: 40px;
+}
+
+.ais-hits--item .result-details {
+  color: #919191;
+}
+
+.ais-hits--item .result-price {
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.ais-hits--item .algolia-thumb-result {
+  max-height: 50px;
+}
+
+.ais-hits--item hr {
+  border: 0.5px solid #CDCDCD;
+}
+
+.ais-refinement-list--label {
+  color: #212121 !important;
+  font-size: 18px !important;
+  display: flex;
+  align-items: center;
+}
+
+.ais-refinement-list--item {
+  margin-bottom: 12px;
+}
+
+.ais-refinement-list--count {
+  color: #212121 !important;
+  background: rgba(39, 81, 108, 0.2) !important;
+  margin-left: auto;
+  margin-right: 57px;
 }
 

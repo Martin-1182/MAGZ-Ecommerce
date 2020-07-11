@@ -3,7 +3,7 @@
 @section('title', $product->name)
 
 @section('extra-css')
-
+<link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
 @endsection
 
 @section('content')
@@ -36,8 +36,6 @@
 </div>
 @endif
 </div>
-
-
 <div class="product-section container">
     <div>
         <div class="product-section-image">
@@ -45,7 +43,7 @@
         </div>
         <div class="product-section-images">
             <div class="product-section-thumbnail selected">
-                <img src="{{ productImage($product->image) }}" alt="product">
+                <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}">
             </div>
 
             @if ($product->images)
@@ -102,4 +100,8 @@
             }
         })();
 </script>
+<!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+<script src="{{ asset('js/algolia.js') }}"></script>
 @endsection

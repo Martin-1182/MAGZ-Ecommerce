@@ -65,3 +65,5 @@ Route::get('/mailable', function () {
 });
 
 Route::get('/search', 'ShopController@search')->name('search');
+
+Route::get('/search-algolia', 'ShopController@searchAlgolia')->name('search-algolia');

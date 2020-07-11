@@ -2,7 +2,7 @@
 
 use Gloudemans\Shoppingcart\Facades\Cart;
 
- function presentPrice($price)
+function presentPrice($price)
 {
     return  number_format($price / 100, 2) . ' €';
 }
@@ -30,7 +30,8 @@ function getNumbers()
         'newTax' => $newTax,
         'newTotal' => $newTotal,
     ]);
-}function productImage($path)
+}
+function productImage($path)
 {
-    return $path && file_exists('storage/'.$path) ? asset('storage/'.$path) : asset('img/not-found.png');
+    return $path && file_exists('storage/' . $path) ? asset('storage/' . $path) : asset('img/not-found.png');
 }

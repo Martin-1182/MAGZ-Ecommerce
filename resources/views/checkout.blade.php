@@ -5,7 +5,6 @@
 @section('extra-css')
 <script src="https://js.stripe.com/v3/"></script>
 @endsection
-
 @section('content')
 
 <div class="container">
@@ -255,5 +254,4 @@
         }
    })();
 </script>
-
 @endsection
