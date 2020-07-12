@@ -1,7 +1,7 @@
 (function() {
     const search = instantsearch({
-        appId: "TEI0REVH9A",
-        apiKey: "7f3bc34e89482f4ef533949a4215473e",
+        appId: "5KYJIGUNMO",
+        apiKey: "86e33cadfd1942990da789a4c978179d",
         indexName: "products",
         urlSync: true
     });
