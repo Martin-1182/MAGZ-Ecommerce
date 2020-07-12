@@ -56,14 +56,14 @@ class MagzInstall extends Command
         File::deleteDirectory(public_path('storage/users'));
 
         $this->callSilent('storage:link');
-        $copySuccess = File::copyDirectory(public_path('img/products'), public_path('web/public/storage/products/dummy'));
+        $copySuccess = File::copyDirectory(public_path('img/products'), public_path('storage/products/dummy'));
         if ($copySuccess) {
             $this->info('Images successfully copied to storage folder.');
         }
 
-        File::copyDirectory(public_path('img/pages'), public_path('web/public/storage/pages'));
-        File::copyDirectory(public_path('img/posts'), public_path('web/public/storage/posts'));
-        File::copyDirectory(public_path('img/users'), public_path('web/public/storage/users'));
+        File::copyDirectory(public_path('img/pages'), public_path('storage/pages'));
+        File::copyDirectory(public_path('img/posts'), public_path('storage/posts'));
+        File::copyDirectory(public_path('img/users'), public_path('storage/users'));
 
         try {
             $this->call('migrate:fresh', [
