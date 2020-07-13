@@ -96,7 +96,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.name'),
+                'display_name' => __('name'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -111,7 +111,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.slug'),
+                'display_name' => __('slug'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -131,7 +131,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => __('voyager::seeders.data_rows.created_at'),
+                'display_name' => __('created_at'),
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
@@ -146,7 +146,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'timestamp',
-                'display_name' => __('voyager::seeders.data_rows.updated_at'),
+                'display_name' => __('updated_at'),
                 'required'     => 0,
                 'browse'       => 0,
                 'read'         => 0,
@@ -161,7 +161,7 @@ class CategoriesTableSeeder extends Seeder
         $menu = Menu::where('name', 'admin')->firstOrFail();
         $menuItem = MenuItem::firstOrNew([
             'menu_id' => $menu->id,
-            'title'   => __('voyager::seeders.menu_items.categories'),
+            'title'   => __('v-categories'),
             'url'     => '',
             'route'   => 'voyager.categories.index',
         ]);
