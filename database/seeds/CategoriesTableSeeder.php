@@ -22,8 +22,8 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataType->exists) {
             $dataType->fill([
                 'slug'                  => 'categories',
-                'display_name_singular' => __('voyager::seeders.data_types.category.singular'),
-                'display_name_plural'   => __('voyager::seeders.data_types.category.plural'),
+                'display_name_singular' => __('category'),
+                'display_name_plural'   => __('categories'),
                 'icon'                  => 'voyager-categories',
                 'model_name'            => 'TCG\\Voyager\\Models\\Category',
                 'controller'            => '',
@@ -37,7 +37,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'number',
-                'display_name' => __('voyager::seeders.data_rows.id'),
+                'display_name' => __('id'),
                 'required'     => 1,
                 'browse'       => 0,
                 'read'         => 0,
@@ -78,7 +78,7 @@ class CategoriesTableSeeder extends Seeder
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => __('voyager::seeders.data_rows.order'),
+                'display_name' => __('order'),
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
