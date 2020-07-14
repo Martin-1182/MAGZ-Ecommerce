@@ -64,7 +64,7 @@
                         </form>
                     </div>
                     <div>
-                        <select class="quantity" data-id="{{ $item->rowId }}">
+                        <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
                             @for ($i = 1; $i < 5 + 1 ; $i++) <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}
                                 </option>
                                 @endfor
@@ -189,24 +189,28 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
     (function(){
-      const classname = document.querySelectorAll('.quantity')
-
-      Array.from(classname).forEach(function (element) {
-        element.addEventListener('change', function() {
-          const id = element.getAttribute('data-id')
-          axios.patch(`/cart/${id}`, {
-            quantity: this.value
+            const classname = document.querySelectorAll('.quantity')
+            Array.from(classname).forEach(function(element) {
+                element.addEventListener('change', function() {
+                    const id = element.getAttribute('data-id')
+                    const productQuantity = element.getAttribute('data-productQuantity')
+                    axios.patch(`/cart/${id}`, {
+                        quantity: this.value,
+                        productQuantity: productQuantity
+                    })
+                    .then(function (response) {
+                        // console.log(response);
+                        window.location.href = '{{ route('cart.index') }}'
+                    })
+                    .catch(function (error) {
+                        // console.log(error);
+                        window.location.href = '{{ route('cart.index') }}'
+                    });
+                })
             })
-            .then(function (response) {
-              window.location.href = '{{ route('cart.index') }}'
-            })
-            .catch(function (error) {
-             window.location.href = '{{ route('cart.index') }}'
-            });
-        })
-      })
-    })();
+        })();
 </script>
+
 <!-- Include AlgoliaSearch JS Client and autocomplete.js library -->
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>

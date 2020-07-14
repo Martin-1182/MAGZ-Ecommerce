@@ -75,8 +75,11 @@ class ShopController extends Controller
 
         $mightAlsoLike = Product::where('slug', '!=', $slug)->mightAlsoLike()->get();
 
+        $stockLevel = getStockLevel($product->quantity);
+
         return view('product')->with([
             'product' => $product,
+            'stockLevel' => $stockLevel,
             'mightAlsoLike' => $mightAlsoLike,
         ]);
     }
