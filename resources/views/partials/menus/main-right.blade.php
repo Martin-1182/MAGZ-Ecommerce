@@ -1,5 +1,5 @@
 <ul>
-    @guest
+   @guest
     <li><a href="{{ route('register') }}">Sign Up</a></li>
     <li><a href="{{ route('login') }}">Login</a></li>
     @else
@@ -8,7 +8,7 @@
     </li>
     <li>
         <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
+                         document.getElementById('logout-form').submit();">
             Logout
         </a>
     </li>
