@@ -72,6 +72,11 @@ class UsersController extends Controller
             'password' => 'sometimes|nullable|string|min:6|confirmed',
         ]);
 
+        // Check if user is demo admin
+        if ($request->user()->id == '2') {
+            return back()->withErrors('You do not have access to this!');
+        }
+
         $user = auth()->user();
         $input = $request->except('password', 'password_confirmation');
 

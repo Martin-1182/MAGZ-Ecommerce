@@ -44,7 +44,7 @@
     <div>
         <div class="product-header">
             <h1 class="stylish-heading">{{ $categoryName }}</h1>
-            <div>
+            <div class="sorting-p">
                 <strong>Price: </strong>
                 <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'low_high' ]) }}">Low to
                     High</a> |

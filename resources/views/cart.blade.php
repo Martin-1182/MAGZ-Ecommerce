@@ -61,16 +61,16 @@
                         <form method="POST" action="{{ route('cart.switchToSaveForLater', $item->rowId) }}">
                             @csrf
                             <button type="submit" class="cart-options">Save for Later</button>
-                        </form>
+                        </form><br>
                     </div>
                     <div>
                         <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
                             @for ($i = 1; $i < 5 + 1 ; $i++) <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}
                                 </option>
                                 @endfor
-                        </select>
+                        </select><br>
                     </div>
-                    <div>{{ presentPrice($item->subtotal) }}</div>
+                    <div class="d-flex-cart">{{ presentPrice($item->subtotal) }}</div>
                 </div>
             </div> <!-- end cart-table-row -->
             @endforeach
