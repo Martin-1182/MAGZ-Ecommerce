@@ -39,9 +39,11 @@
 
                 <div class="login-container">
                     <button type="submit" class="auth-button">Create Account</button>
+                    <div class="spacer"></div>
                     <div class="already-have-container">
                         <p><strong>Already have an account?</strong></p>
-                        <a href="{{ route('login') }}">Login</a>
+
+                        <a class="auth-button" href="{{ route('login') }}">Login</a>
                     </div>
                 </div>
 

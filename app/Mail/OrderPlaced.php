@@ -32,7 +32,7 @@ class OrderPlaced extends Mailable
     public function build()
     {
         return $this->to($this->order->billing_email, $this->order->billing_name)
-            ->bcc('another@another')
+            ->bcc('example@example.com')
             ->subject('Objednávka s MAGZ-Ecommerce')
             ->markdown('emails.orders.placed');
     }

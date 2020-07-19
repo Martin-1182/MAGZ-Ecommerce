@@ -1,7 +1,7 @@
 (function() {
     var client = algoliasearch(
-        "5KYJIGUNMO",
-        "86e33cadfd1942990da789a4c978179d"
+        "Z8PM4V85U6",
+        "7f15e47fa07cbb3985992991a725f9b6"
     );
     var index = client.initIndex("products");
     var enterPressed = false;

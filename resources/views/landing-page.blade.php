@@ -25,7 +25,7 @@
             <div class="top-nav-left">
                 <a href="/">
                     <div class="logo">
-                        <img src="{{ asset('img/logo-light.png') }}" height="35" alt="Logo">
+                        <img src="{{ asset('img/logo-light.png') }}" height="55" alt="Logo">
                     </div>
                 </a>
                 {{ menu('main', 'partials.menus.main') }}
@@ -47,7 +47,7 @@
             </div> <!-- end hero-copy -->
 
             <div class="hero-image">
-                <img src="img/hero_2.png" alt="hero image">
+                <img src="img/test-img.png" alt="hero image">
             </div> <!-- end hero-image -->
         </div> <!-- end hero -->
     </header>

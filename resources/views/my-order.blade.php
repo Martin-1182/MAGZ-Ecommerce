@@ -88,6 +88,10 @@
                                 <td>{{ presentPrice($order->billing_subtotal) }}</td>
                             </tr>
                             <tr>
+                                <td>Discount</td>
+                                <td>{{ presentPrice($order->billing_discount) }}</td>
+                            </tr>
+                            <tr>
                                 <td>Tax</td>
                                 <td>{{ presentPrice($order->billing_tax) }}</td>
                             </tr>

@@ -60,9 +60,22 @@
             grid-template-columns: 1fr;
             text-align: center;
             grid-template-areas: "blog3" "blog2" "blog1";
+            padding: 0 10px 0 10px;
             .blog-post {
                 margin-top: 30px;
             }
+        }
+        .section-description {
+            width: 80%;
+            margin: 21px auto;
+            text-align: center;
+        }
+        .blog-title {
+            text-align: left;
+            text-transform: uppercase;
+        }
+        .blog-description {
+            text-align: left;
         }
     }
     .footer-content {
@@ -176,9 +189,21 @@
     }
     .checkout-section {
         grid-template-columns: 1fr;
+        padding: 0 10px 0 10px;
         .checkout-table-container {
             margin-left: 10px;
+            margin-left: 10px;
         }
+    }
+    .checkout-section .checkout-table-row .checkout-table-row-left {
+        img {
+            width: 60px;
+            margin-right: 15px;
+        }
+    }
+    h1.checkout-heading {
+        margin-top: 40px;
+        margin-left: 10px;
     }
     .search-results-container-algolia {
         grid-template-columns: 1fr;
@@ -191,10 +216,30 @@
         margin: 50px auto;
         grid-template-columns: 1fr;
         grid-gap: 40px;
+        padding: 0 10px 0 10px;
         .auth-right {
             border-left: none;
             padding-left: 20px;
         }
+    }
+    .already-have-container p {
+        padding-bottom: 8px;
+    }
+    .auth-pages .login-container {
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
+    .auth-pages .already-have-container {
+        text-align: left;
+    }
+    .auth-pages .auth-button {
+        background: #212121;
+        color: #e9e9e9;
+        border-radius: 5px;
+        padding: 12px 50px;
+        font-size: 17px;
     }
     .my-profile input {
         width: 100%;
