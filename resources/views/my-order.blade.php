@@ -87,10 +87,13 @@
                                 <td>Subtotal</td>
                                 <td>{{ presentPrice($order->billing_subtotal) }}</td>
                             </tr>
+                            @if ($order->billing_discount > 0)
                             <tr>
                                 <td>Discount</td>
                                 <td>{{ presentPrice($order->billing_discount) }}</td>
                             </tr>
+                            @endif
+
                             <tr>
                                 <td>Tax</td>
                                 <td>{{ presentPrice($order->billing_tax) }}</td>

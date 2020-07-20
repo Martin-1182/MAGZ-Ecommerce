@@ -9,15 +9,17 @@ Thank you for your order.
 
 **Order Name:** {{ $order->billing_name }}
 
-**Order Tax:** {{ round($order->billing_tax / 100, 2) }},- €
+**Order Tax:** {{ round($order->billing_tax / 100, 2) }} €
 
-**Order Total:** {{ round($order->billing_total / 100, 2) }},- €
+**Order Discount:** {{ round($order->billing_discount / 100, 2) }} €
+
+**Order Total:** {{ round($order->billing_total / 100, 2) }} €
 
 **Items Ordered**
 
 @foreach ($order->products as $product)
 Name: {{ $product->name }} <br>
-Price: {{ round($product->price / 100, 2)}},- € <br>
+Price: {{ round($product->price / 100, 2)}} € <br>
 Quantity: {{ $product->pivot->quantity }} <br>
 @endforeach
 
