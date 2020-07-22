@@ -9,7 +9,7 @@ html {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: #212121;
 }
 
@@ -1048,7 +1048,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 120px;
-  padding: 100px 0 120px;
+  padding: 100px 0 50px;
 }
 
 .product-section .selected {

@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
 </head>
-
 <body>
     <div id="app">
     <header class="with-background">
@@ -25,7 +24,7 @@
             <div class="top-nav-left">
                 <a href="/">
                     <div class="logo">
-                        <img src="{{ asset('img/logo-light.png') }}" height="55" alt="Logo">
+                        <img src="{{ asset('img/logo-new-light.svg') }}" height="70" alt="Logo">
                     </div>
                 </a>
                 {{ menu('main', 'partials.menus.main') }}

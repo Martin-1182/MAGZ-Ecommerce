@@ -2,22 +2,21 @@ html {
     box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none!important;
     color: $text-color;
-
     &:visited {
         color: $text-color;
     }
-
     &:hover {
         color: lighten($text-color, 40%);
     }
-
 }
 
 .logo a {
