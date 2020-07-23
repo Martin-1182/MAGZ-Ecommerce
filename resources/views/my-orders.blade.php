@@ -67,7 +67,7 @@
                         <div class="order-header-items">
                             <div><a href="{{ route('orders.show', $order->id) }}">Order Details</a></div>
                             <div>|</div>
-                            <div><a href="#">Invoice</a></div>
+                            <div><a href="{{action('InvoiceController@downloadPDF', $order->id)}}">Invoice</a></div>
                         </div>
                     </div>
                 </div>

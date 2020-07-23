@@ -19,7 +19,7 @@
                         <h2 class="blog-title">{{ post.title.rendered }}</h2>
                     </a>
                     <div class="blog-description">
-                        {{ stripTags(post.excerpt.rendered) }}
+                        {{ shorten(stripTags(post.excerpt.rendered), 200) }}
                     </div>
                 </div>
             </div>
@@ -43,12 +43,15 @@ export default {
     },
     created() {
         axios
-            .get("https://blog.halaj.online/wp-json/wp/v2/posts?per_page=3")
+            .get("https://blog-ecommerce.websystem.sk/index.php/wp-json/wp/v2/posts?per_page=3")
             .then(response => {
                 this.posts = response.data;
             });
     },
     methods: {
+        shorten(text, len = 50) {
+            return _.truncate(text, { length: len})
+        },
         stripTags(html) {
             return sanitizeHtml(html, {
                 allowedTags: []
