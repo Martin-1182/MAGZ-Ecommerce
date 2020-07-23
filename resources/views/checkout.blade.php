@@ -37,9 +37,11 @@
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     @if (auth()->user())
-                    <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}"
+                        readonly>
                     @else
-                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"
+                        required>
                     @endif
                 </div>
                 <div class="form-group">
@@ -102,7 +104,12 @@
 
 
             </form>
+            <div class="note alert alert-danger">
+                <h4>Testovacia karta:</h4>
+                <code>4242 4242 4242 4242 04/22 222</code>
+            </div>
         </div>
+
 
         <div class="checkout-table-container">
             <h2>Your Order</h2>

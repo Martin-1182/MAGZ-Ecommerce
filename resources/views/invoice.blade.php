@@ -143,7 +143,7 @@
 
         <div class="row">
             <div class="col-xs-8 invbody-terms">
-                Ďakujeme Vám za Vašu objednávku. <br>
+                Dakujeme Vám za Vašu objednávku. <br>
                 <br>
                 <h4>Platobné podmienky</h4>
                 <p>Táto faktúra je neplatná!!! V žiadnom prípade FA neuhrádzajte!!! Táto aplikácia je demo verzia elektronického obchodu!</p>
