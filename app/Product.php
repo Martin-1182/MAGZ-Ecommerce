@@ -37,6 +37,7 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Category');
     }
+
     public function presentPrice()
     {
         return number_format($this->price / 100, 2, ',', ' ') . ' €';

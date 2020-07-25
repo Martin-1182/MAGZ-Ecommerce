@@ -1,5 +1,5 @@
-<div class="card">
-    <div class="card-body">
+<div class="card comment-card">
+    <div class="card-body comment-form">
         @if($errors->has('commentable_type'))
             <div class="alert alert-danger" role="alert">
                 {{ $errors->first('commentable_type') }}
@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <label for="message">Enter your message here:</label>
-                <textarea class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="10"></textarea>
+                <textarea class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="4"></textarea>
                 <div class="invalid-feedback">
                     Your message is required.
                 </div>

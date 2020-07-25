@@ -30,7 +30,7 @@
                                         ${item._highlightResult.details.value}
                                     </div>
                                     <div class="result-price">
-                                        $${(item.price / 100).toFixed(2)}
+                                        ${(item.price / 100).toFixed(2)} €
                                     </div>
                                 </div>
                             </div>

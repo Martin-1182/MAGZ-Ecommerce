@@ -81,8 +81,11 @@
         @endif
     </div>
 </div> <!-- end product-section -->
+
+
   <!-- comments section -->
-  <div class="container">
+  <div class="container comments-container">
+      <hr>
       @comments(['model' => $product])
   </div>
 

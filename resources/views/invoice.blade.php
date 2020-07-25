@@ -35,7 +35,7 @@
             </div>
 
             <div class="col-xs-4">
-                <img src="https://res.cloudinary.com/dhrpbxhvh/image/upload/v1595524545/logo-invoice_y0awnq.png"
+                <img src="https://res.cloudinary.com/dhrpbxhvh/image/upload/v1595600812/WS-logo-blue-edit_wu6uuz.png"
                     height="75px" alt="logo">
             </div>
         </div>
@@ -89,6 +89,9 @@
                     <th>Zoznam položiek</th>
                     <th></th>
                     <th class="text-right">Množstvo</th>
+                    @if ($order->billing_discount > 0)
+                    <th class="text-right">Zlava</th>
+                    @endif
                     <th class="text-right">Cena</th>
                 </tr>
             </thead>
@@ -101,6 +104,9 @@
                     </td>
                     <td></td>
                     <td class="text-right">{{ $product->pivot->quantity }}</td>
+                    @if ($order->billing_discount > 0)
+                    <td class="text-right">{{ presentPrice($order->billing_discount) }}</td>
+                    @endif
                     <td class="text-right">{{ presentPrice($product->price) }}</td>
 
                 </tr>
@@ -146,7 +152,8 @@
                 Dakujeme Vám za Vašu objednávku. <br>
                 <br>
                 <h4>Platobné podmienky</h4>
-                <p>Táto faktúra je neplatná!!! V žiadnom prípade FA neuhrádzajte!!! Táto aplikácia je demo verzia elektronického obchodu!</p>
+                <p>Táto faktúra je neplatná!!! V žiadnom prípade FA neuhrádzajte!!! Táto aplikácia je demo verzia
+                    elektronického obchodu!</p>
                 <br>
                 <p><strong>WebSystem s.r.o.</strong></p>
             </div>

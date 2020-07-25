@@ -366,6 +366,36 @@
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 480px) {
+  .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+    padding: 0 !important;
+  }
+
+  .media {
+    display: block !important;
+  }
+
+  .media img {
+    height: 20px;
+  }
+
+  .comment-form {
+    padding: 0.5em !important;
+  }
+
+  .media-body h5 {
+    font-size: 1.1em;
+  }
+
+  .media-body .comment-txt {
+    font-size: 0.85em;
+  }
+
+  .comment-card {
+    border: none !important;
+  }
+
   .aa-input-search {
     width: 300px !important;
     padding: 12px 28px 12px 12px;
