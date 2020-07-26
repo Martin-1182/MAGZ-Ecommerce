@@ -42,7 +42,7 @@
     </div> <!-- end sidebar -->
     <div class="my-profile">
         <div class="products-header">
-            <h1 class="stylish-heading">Order ID: {{ $order->id }}</h1>
+            <h1 class="stylish-heading">Objednávka {{ $order->id }}</h1>
         </div>
 
         <div>
@@ -50,57 +50,57 @@
                 <div class="order-header">
                     <div class="order-header-items">
                         <div>
-                            <div class="uppercase font-bold">Order Placed</div>
-                            <div>{{ presentDate($order->created_at) }}</div>
+                            <div class="uppercase font-bold badge badge-success">Dátum</div>
+                            <div class="order-data">{{ presentDate($order->created_at) }}</div>
                         </div>
                         <div>
-                            <div class="uppercase font-bold">Order ID</div>
-                            <div>{{ $order->id }}</div>
+                            <div class="uppercase font-bold badge badge-success">ID</div>
+                            <div class="order-data">ID-{{ $order->id }}</div>
                         </div>
                         <div>
-                            <div class="uppercase font-bold">Total</div>
-                            <div>{{ presentPrice($order->billing_total) }}</div>
+                            <div class="uppercase font-bold badge badge-success">Spolu</div>
+                            <div class="order-data">{{ presentPrice($order->billing_total) }}</div>
                         </div>
                     </div>
                     <div>
-                        <div class="order-header-items">
-                            <div><a href="#">Invoice</a></div>
+                        <div class="order-header-items order-links">
+                            <div class="links"><a href="{{action('InvoiceController@downloadPDF', $order->id)}}">Faktúra</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="order-products">
-                    <table class="table" style="width:50%">
+                    <table class="table order-table">
                         <tbody>
                             <tr>
-                                <td>Name</td>
+                                <td>Meno</td>
                                 <td>{{ $order->user->name }}</td>
                             </tr>
                             <tr>
-                                <td>Address</td>
+                                <td>Adresa</td>
                                 <td>{{ $order->billing_address }}</td>
                             </tr>
                             <tr>
-                                <td>City</td>
+                                <td>Mesto</td>
                                 <td>{{ $order->billing_city }}</td>
                             </tr>
                             <tr>
-                                <td>Subtotal</td>
+                                <td>Medzisúčet</td>
                                 <td>{{ presentPrice($order->billing_subtotal) }}</td>
                             </tr>
                             @if ($order->billing_discount > 0)
                             <tr>
-                                <td>Discount</td>
+                                <td>Zľava</td>
                                 <td>{{ presentPrice($order->billing_discount) }}</td>
                             </tr>
                             @endif
 
                             <tr>
-                                <td>Tax</td>
+                                <td>DPH (20%)</td>
                                 <td>{{ presentPrice($order->billing_tax) }}</td>
                             </tr>
                             <tr>
-                                <td>Total</td>
-                                <td>{{ presentPrice($order->billing_total) }}</td>
+                                <td>Spolu</td>
+                                <td><strong style="font-weight: 600;">{{ presentPrice($order->billing_total) }}</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -112,7 +112,7 @@
                 <div class="order-header">
                     <div class="order-header-items">
                         <div>
-                            Order Items
+                            Objednaná položka
                         </div>
 
                     </div>
@@ -126,7 +126,7 @@
                                 <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                             </div>
                             <div>{{ presentPrice($product->price) }}</div>
-                            <div>Quantity: {{ $product->pivot->quantity }}</div>
+                            <div>Množstvo: {{ $product->pivot->quantity }}</div>
                         </div>
                     </div>
                     @endforeach

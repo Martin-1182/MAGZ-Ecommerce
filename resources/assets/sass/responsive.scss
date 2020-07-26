@@ -352,6 +352,44 @@
         -moz-appearance: none;
         appearance: none;
     }
+    .my-orders .order-header {
+        background: #F6F6F6;
+        border: 1px solid #DDDDDD;
+        padding: 3px;
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .my-orders .order-header-items {
+        display: flex;
+    }
+    .my-orders .order-header-items div {
+        margin-right: 15px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .spc {
+        margin-right: 2px!important;
+        margin-left: 2px!important;
+    }
+    .my-orders .order-header-items {
+        .order-data {
+            font-size: 15px;
+        }
+    }
+    .order-links {
+        .details,
+        .links {
+            margin-right: 2px!important;
+            a {
+                color: red;
+                text-align: center;
+            }
+        }
+    }
+    .order-table {
+        width: 100%!important;
+    }
     .aa-dropdown-menu {
         background-color: #fff;
         border: 2px solid rgba(228, 228, 228, 0.6);

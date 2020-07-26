@@ -13,6 +13,7 @@
                 empty: "No results",
                 item: function(item) {
                     return `
+
                         <a href="${window.location.origin}/shop/${item.slug}">
                             <div class="instantsearch-result">
                                 <div>
@@ -35,6 +36,7 @@
                                 </div>
                             </div>
                         </a>
+
                         <hr>
                     `;
                 }

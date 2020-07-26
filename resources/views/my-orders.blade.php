@@ -37,12 +37,12 @@
 
         <ul>
             <li><a href="{{ route('users.edit') }}">My Profile</a></li>
-            <li class="active"><a href="{{ route('orders.index') }}">My Orders</a></li>
+            <li class="active"><a href="{{ route('orders.index') }}">Objednávky</a></li>
         </ul>
     </div> <!-- end sidebar -->
     <div class="my-profile">
         <div class="products-header">
-            <h1 class="stylish-heading">My Orders</h1>
+            <h1 class="stylish-heading">Objednávky</h1>
         </div>
 
         <div>
@@ -51,23 +51,23 @@
                 <div class="order-header">
                     <div class="order-header-items">
                         <div>
-                            <div class="uppercase font-bold">Order Placed</div>
-                            <div>{{ presentDate($order->created_at) }}</div>
+                            <div class="uppercase font-bold badge badge-success">Dátum</div>
+                            <div class="order-data">{{ presentDate($order->created_at) }}</div>
                         </div>
                         <div>
-                            <div class="uppercase font-bold">Order ID</div>
-                            <div>{{ $order->id }}</div>
+                            <div class="uppercase font-bold badge badge-success">ID</div>
+                            <div class="order-data">ID-{{ $order->id }}</div>
                         </div>
                         <div>
-                            <div class="uppercase font-bold">Total</div>
-                            <div><strong>{{ presentPrice($order->billing_total) }}</strong></div>
+                            <div class="uppercase font-bold badge badge-success">Spolu</div>
+                            <div><strong style="font-weight: 500;">{{ presentPrice($order->billing_total) }}</strong></div>
                         </div>
                     </div>
                     <div>
-                        <div class="order-header-items">
-                            <div><a href="{{ route('orders.show', $order->id) }}">Order Details</a></div>
-                            <div>|</div>
-                            <div><a href="{{action('InvoiceController@downloadPDF', $order->id)}}">Invoice</a></div>
+                        <div class="order-header-items order-links">
+                            <div class="details"><a href="{{ route('orders.show', $order->id) }}">Detail</a></div>
+                            <div class="spc">|</div>
+                            <div class="links"><a href="{{action('InvoiceController@downloadPDF', $order->id)}}">Faktúra</a></div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                                 <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                             </div>
                             <div>{{ presentPrice($product->price) }}</div>
-                            <div>Quantity: {{ $product->pivot->quantity }}</div>
+                            <div>Množstvo: {{ $product->pivot->quantity }}</span></div>
                         </div>
                     </div>
                     @endforeach

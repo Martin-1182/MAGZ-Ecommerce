@@ -7,7 +7,7 @@
 @endphp
 
 @if($comments->count() < 1)
-    <h2>There are no comments yet.</h2>
+    <h2>Zatiaľ tu nie sú žiadne komentáre.</h2>
 @endif
 
 <ul class="list-unstyled">
@@ -66,9 +66,9 @@
 @else
     <div class="card mb-5">
         <div class="card-body">
-            <h5 class="card-title">Authentication required</h5>
-            <p class="card-text">You must log in to post a comment.</p>
-            <a href="{{ route('login') }}" class="button button-plain">Log in</a>
+            <h5 class="card-title">Vyžaduje sa prihlásenie!</h5>
+            <p class="card-text">Ak chcete pridať komentár, musíte sa prihlásiť.</p>
+            <a href="{{ route('login') }}" class="button button-plain">Prihlásiť sa</a>
         </div>
     </div>
 @endauth

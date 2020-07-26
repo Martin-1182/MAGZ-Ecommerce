@@ -61,7 +61,12 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/mailable', function () {
     $order = App\Order::find(1);
-    return new App\Mail\OrderPlaced($order);
+    if ($order > 0) {
+        return new App\Mail\OrderPlaced($order);
+    } else {
+        return back();
+    }
+
 });
 
 //shopRoute::get('/search', 'ShopController@search')->name('search');
@@ -76,5 +81,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
 
     Route::get('/downloadPDF/{id}', 'InvoiceController@downloadPDF');
-
 });

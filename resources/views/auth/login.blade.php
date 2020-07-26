@@ -45,7 +45,6 @@
 
             </form>
         </div>
-
         <div class="auth-right">
             <h2>New Customer</h2>
             <div class="spacer"></div>

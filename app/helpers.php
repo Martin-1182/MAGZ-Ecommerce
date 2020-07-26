@@ -43,11 +43,11 @@ function productImage($path)
 function getStockLevel($quantity)
 {
     if ($quantity > setting('site.stock_threshold', 5)) {
-        $stockLevel = '<div class="badge badge-success">In Stock</div>';
+        $stockLevel = '<div class="badge badge-success">Skladom</div>';
     } elseif ($quantity <= setting('site.stock_threshold', 5) && $quantity > 0) {
-        $stockLevel = '<div class="badge badge-warning">Low Stock</div>';
+        $stockLevel = '<div class="badge badge-warning">Posledné kusy</div>';
     } else {
-        $stockLevel = '<div class="badge badge-danger">Not available</div>';
+        $stockLevel = '<div class="badge badge-danger">Nedostupné</div>';
     }
 
     return $stockLevel;

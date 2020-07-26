@@ -7,10 +7,10 @@
     <meta name="robots" content="noindex">
 
 
-    <title>Invoice</title>
+    <title>Faktúra</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <style>
         .text-right {

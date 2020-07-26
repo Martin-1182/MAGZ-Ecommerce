@@ -1,15 +1,18 @@
 <ul>
-   @guest
-    <li><a href="{{ route('register') }}">Sign Up</a></li>
-    <li><a href="{{ route('login') }}">Login</a></li>
+    @guest
+    <li>
+        <a href="{{ route('register') }}">Registrácia</a>
+    </li>
+    <li>
+        <a href="{{ route('login') }}">Prihlásiť sa</a>
+    </li>
     @else
     <li>
-        <a href="{{ route('users.edit') }}">My Account</a>
+        <a href="{{ route('users.edit') }}">Môj profil</a>
     </li>
     <li>
         <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
-            Logout
+             document.getElementById('logout-form').submit();">Odhlásiť sa
         </a>
     </li>
 
@@ -17,9 +20,13 @@
         {{ csrf_field() }}
     </form>
     @endguest
-    <li><a href="{{ route('cart.index') }}">Cart
+    <li>
+        <a href="{{ route('cart.index') }}">Košík
             @if (Cart::instance('default')->count() > 0)
-            <span class="cart-count"><span>{{ Cart::instance('default')->count() }}</span></span>
+            <span class="cart-count">
+                <span>{{ Cart::instance('default')->count() }}</span>
+            </span>
             @endif
-        </a></li>
+        </a>
+    </li>
 </ul>

@@ -13,13 +13,13 @@
 
         <div>
             @can('reply-to-comment', $comment)
-                <button data-toggle="modal" data-target="#reply-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Reply</button>
+                <button data-toggle="modal" data-target="#reply-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Odpovedať</button>
             @endcan
             @can('edit-comment', $comment)
-                <button data-toggle="modal" data-target="#comment-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Edit</button>
+                <button data-toggle="modal" data-target="#comment-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Editovať</button>
             @endcan
             @can('delete-comment', $comment)
-                <a href="{{ route('comments.destroy', $comment->getKey()) }}" onclick="event.preventDefault();document.getElementById('comment-delete-form-{{ $comment->getKey() }}').submit();" class="btn btn-sm btn-link text-danger text-uppercase">Delete</a>
+                <a href="{{ route('comments.destroy', $comment->getKey()) }}" onclick="event.preventDefault();document.getElementById('comment-delete-form-{{ $comment->getKey() }}').submit();" class="btn btn-sm btn-link text-danger text-uppercase">Zmazať</a>
                 <form id="comment-delete-form-{{ $comment->getKey() }}" action="{{ route('comments.destroy', $comment->getKey()) }}" method="POST" style="display: none;">
                     @method('DELETE')
                     @csrf
@@ -35,21 +35,21 @@
                             @method('PUT')
                             @csrf
                             <div class="modal-header">
-                                <h5 class="modal-title">Edit Comment</h5>
+                                <h5 class="modal-title">Edititovať komentár</h5>
                                 <button type="button" class="close" data-dismiss="modal">
                                 <span>&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="message">Update your message here:</label>
+                                    <label for="message">Upravte svoj komentár tu:</label>
                                     <textarea required class="form-control" name="message" rows="3">{{ $comment->comment }}</textarea>
                                     <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-sm btn-outline-secondary text-uppercase" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-sm btn-outline-success text-uppercase">Update</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary text-uppercase" data-dismiss="modal">Zrušiť</button>
+                                <button type="submit" class="btn btn-sm btn-outline-success text-uppercase">Upraviť</button>
                             </div>
                         </form>
                     </div>
@@ -71,14 +71,14 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="message">Enter your message here:</label>
+                                    <label for="message">Tu môžete pśať svoj komentár:</label>
                                     <textarea required class="form-control" name="message" rows="3"></textarea>
                                     <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-sm btn-outline-secondary text-uppercase" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-sm btn-outline-success text-uppercase">Reply</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary text-uppercase" data-dismiss="modal">Zrušiť</button>
+                                <button type="submit" class="btn btn-sm btn-outline-success text-uppercase">Odpovedať</button>
                             </div>
                         </form>
                     </div>
