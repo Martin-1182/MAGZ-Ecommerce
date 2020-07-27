@@ -52,7 +52,7 @@ class OrdersController extends Controller
     {
         if (auth()->id() != $order->user_id) {
 
-            return back()->withErrors('You do not have access to this!');
+            return back()->withErrors('K takejto zmene nemáte prístup!');
         }
 
         $products = $order->products;

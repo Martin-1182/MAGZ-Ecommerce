@@ -50,13 +50,13 @@ class CartController extends Controller
             return $cartItem->id === $request->id;
         });
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is alredy in your cart!');
+            return redirect()->route('cart.index')->with('success_message', 'Položka je už v nákupnom košíku!');
         }
 
         Cart::add($request->id, $request->name, 1, $request->price)
             ->associate('App\Product');
 
-        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart');
+        return redirect()->route('cart.index')->with('success_message', 'Položka bola pridaná do košíka');
     }
 
     /**
@@ -95,17 +95,17 @@ class CartController extends Controller
         ]);
 
         if ($validator->fails()) {
-            session()->flash('errors', collect(['Quantity must be between 1 and 5.']));
+            session()->flash('errors', collect(['Množstvo musí byť medzi 1 a 5']));
             return response()->json(['success' => false], 400);
         }
 
         if ($request->quantity > $request->productQuantity) {
-            session()->flash('errors', collect(['We currently do not have enough items in stock.']));
+            session()->flash('errors', collect(['Momentálne nemáme na sklade dostatok položiek']));
             return response()->json(['success' => false], 400);
         }
 
         Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity was updated successfully!');
+        session()->flash('success_message', 'Množstvo bolo úspešne aktualizované!');
         return response()->json(['success' => true]);
     }
 
@@ -119,7 +119,7 @@ class CartController extends Controller
     {
         Cart::remove($id);
 
-        return back()->with('success_message', 'Item has been removed!');
+        return back()->with('success_message', 'Položka bola odstránená!');
     }
 
     /**
@@ -139,12 +139,12 @@ class CartController extends Controller
         });
 
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already Saved For Later!');
+            return redirect()->route('cart.index')->with('success_message', 'Položka je už uložená na neskôr!');
         }
 
         Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)
             ->associate('App\Product');
 
-        return redirect()->route('cart.index')->with('success_message', 'Item has been Saved For Later!');
+        return redirect()->route('cart.index')->with('success_message', 'Položka bola uložená na neskôr!');
     }
 }

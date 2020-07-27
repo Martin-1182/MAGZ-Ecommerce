@@ -1,36 +1,38 @@
 @component('mail::message')
-# Order Received
+# Objednavka prijata
 
-Thank you for your order.
+Ďakujeme za Vašu objednávku.
 
-**Order ID:** {{ $order->id }}
+**Objednávka ID:** {{ $order->id }}
 
-**Order Email:** {{ $order->billing_email }}
+**Email:** {{ $order->billing_email }}
 
-**Order Name:** {{ $order->billing_name }}
+**Meno:** {{ $order->billing_name }}
 
-**Order Tax:** {{ round($order->billing_tax / 100, 2) }} €
+**DPH:** {{ presentPrice($order->billing_tax) }}
 
-**Order Discount:** {{ round($order->billing_discount / 100, 2) }} €
+@if ($order->billing_discount > 0)
+**Zľava na objednávku:** {{ presentPrice($order->billing_discount) }}
+@endif
 
-**Order Total:** {{ round($order->billing_total / 100, 2) }} €
+**Celková suma objednávky:** {{ presentPrice($order->billing_total) }}
 
-**Items Ordered**
+**Objednané položky**
 
 @foreach ($order->products as $product)
-Name: {{ $product->name }} <br>
-Price: {{ round($product->price / 100, 2)}} € <br>
-Quantity: {{ $product->pivot->quantity }} <br>
+Produkt: {{ $product->name }} <br>
+Cena: {{ presentPrice($product->price)}} <br>
+Množstvo: {{ $product->pivot->quantity }} <br>
 @endforeach
 
-You can get further details about your order by logging into our website.
+Ďalšie podrobnosti o svojej objednávke získate po prihlásení na našu webovú stránku.
 
 @component('mail::button', ['url' => config('app.url'), 'color' => 'green'])
-Go to Website
+Prejdite na webovú stránku
 @endcomponent
 
-Thank you again for choosing us.
+Ešte raz vám ďakujeme, že ste si nás vybrali.
 
-Regards,<br>
+S pozdravom,<br>
 {{ config('app.name') }}
 @endcomponent

@@ -57,7 +57,7 @@ class CheckoutController extends Controller
     public function store(CheckoutRequest $request)
     {
         if ($this->productsAreNoLongerAvailable()) {
-            return back()->withErrors('Sorry! One of the items in your cart is no longer avialble.');
+            return back()->withErrors('Prepáčte! Jedna z položiek v košíku už nie je dostupná');
         }
         $contents = Cart::content()->map(function ($item) {
             return $item->model->slug . ', ' . $item->qty;
@@ -87,7 +87,7 @@ class CheckoutController extends Controller
             // SUCCESSFUL
             Cart::instance('default')->destroy();
             session()->forget('coupon');
-            return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
+            return redirect()->route('confirmation.index')->with('success_message', 'Ďakujeme! Vaša platba bola úspešne prijatá!');
         } catch (CardErrorException $e) {
             $this->addToOrdersTables($request, $e->getMessage());
             return back()->withErrors('Error! ' . $e->getMessage());

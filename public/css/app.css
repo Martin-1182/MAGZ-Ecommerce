@@ -990,6 +990,10 @@ footer {
   color: #919191 !important;
 }
 
+.hero-name {
+  display: block;
+}
+
 .blog-section {
   background: #F5F5F5;
   border-top: 1px solid #CDCDCD;

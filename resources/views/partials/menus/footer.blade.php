@@ -1,6 +1,6 @@
 <ul>
    @foreach ($items as $menu_item)
-   @if ($menu_item->title === 'Follow Me:')
+   @if ($menu_item->title === 'Sledujte nás:')
     <li>{{ $menu_item->title }}</li>
    @endif
 <li>

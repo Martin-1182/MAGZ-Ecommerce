@@ -9,9 +9,9 @@
 @section('content')
 
 @component('components.breadcrumbs')
-<a href="/">Home</a>
+<a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
-<span>Shop</span>
+<span>Obchod</span>
 @endcomponent <!-- end breadcrumbs -->
 
 <div class="cart-section container">
@@ -32,7 +32,7 @@
         </div>
         @endif
         @if (Cart::count() > 0)
-        <h2>{{ Cart::count() }} item(s) in Shopping Cart</h2>
+        <h2>{{ Cart::count() }} produkt(y) v košíku</h2>
 
         <div class="cart-table">
             @foreach (Cart::content() as $item)
@@ -55,12 +55,12 @@
                         <form method="POST" action="{{ route('cart.destroy', $item->rowId) }}">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <button type="submit" class="cart-options">Remove</button>
+                            <button type="submit" class="cart-options">Odstrániť</button>
                         </form>
                         <!-- <a href="#">Save for Later</a> -->
                         <form method="POST" action="{{ route('cart.switchToSaveForLater', $item->rowId) }}">
                             @csrf
-                            <button type="submit" class="cart-options">Save for Later</button>
+                            <button type="submit" class="cart-options">Odložiť</button>
                         </form><br>
                     </div>
                     <div>
@@ -78,38 +78,37 @@
 
         @if (! session()->has('coupon'))
 
-        <a href="#" class="have-code">Have a Code?</a>
+        <a href="#" class="have-code">Máte kupón?</a>
 
         <div class="have-code-container">
             <form action="{{ route('coupon.store') }}" method="POST">
                 {{ csrf_field() }}
                 <input type="text" name="coupon_code" id="coupon_code">
-                <button type="submit" class="button button-plain">Apply</button>
+                <button type="submit" class="button button-plain">Použiť</button>
             </form>
         </div> <!-- end have-code-container -->
         @endif
 
         <div class="cart-totals">
             <div class="cart-totals-left">
-                Shipping is free because we’re awesome like that. Also because that’s additional stuff I don’t feel like
-                figuring out :).
+                Doprava je zadarmo, pretože sme takí úžasní.
             </div>
 
             <div class="cart-totals-right">
                 <div>
-                    Subtotal <br>
+                    Priebežne <br>
                     @if (session()->has('coupon'))
-                    Code ({{ session()->get('coupon')['name'] }})
+                    Kupón ({{ session()->get('coupon')['name'] }})
                     <form action="{{ route('coupon.destroy') }}" method="POST" style="display:block">
                         {{ csrf_field() }}
                         {{ method_field('delete') }}
-                        <button type="submit" style="font-size:14px;">Remove</button>
+                        <button type="submit" style="font-size:14px;">Odstrániť</button>
                     </form>
                     <hr>
-                    New Subtotal <br>
+                    Po zľave <br>
                     @endif
-                    Tax ({{config('cart.tax')}}%)<br>
-                    <span class="cart-totals-total">Total</span>
+                    DPH ({{config('cart.tax')}}%)<br>
+                    <span class="cart-totals-total">Spolu</span>
                 </div>
                 <div class="cart-totals-subtotal">
                     {{ presentPrice(Cart::subtotal()) }} <br>
@@ -125,18 +124,18 @@
             </div> <!-- end cart-totals -->
 
         <div class="cart-buttons">
-            <a href="{{ route('shop.index') }}" class="button">Continue Shopping</a>
-            <a href="{{ route('checkout.index') }}" class="button-primary">Proceed to Checkout</a>
+            <a href="{{ route('shop.index') }}" class="button">Pokračovať v nákupe</a>
+            <a href="{{ route('checkout.index') }}" class="button-primary">Pokračujte k pokladni</a>
         </div>
         @else
-        <h3>No items in Cart!</h3>
+        <h3>Žiadne položky v košíku!</h3>
         <div class="spacer"></div>
-        <a href="{{ route('shop.index') }}" class="button">Continue shopping</a>
+        <a href="{{ route('shop.index') }}" class="button">Pokračovať v nákupe</a>
         <div class="spacer"></div>
         @endif
         @if (Cart::instance('saveForLater')->count() > 0)
 
-        <h2>{{ Cart::instance('saveForLater')->count() }} item(s) Saved For Later</h2>
+        <h2>{{ Cart::instance('saveForLater')->count() }} produkt(y) uložené na neskôr</h2>
 
         <div class="saved-for-later cart-table">
             @foreach (Cart::instance('saveForLater')->content() as $item)
@@ -158,12 +157,12 @@
                         <form method="POST" action="{{ route('saveForLater.destroy', $item->rowId) }}">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <button type="submit" class="cart-options">Remove</button>
+                            <button type="submit" class="cart-options">Odstrániť</button>
                         </form>
                         <!-- <a href="#">Save for Later</a> -->
                         <form method="POST" action="{{ route('saveForLater.switchToCart', $item->rowId) }}">
                             @csrf
-                            <button type="submit" class="cart-options">Move to Cart</button>
+                            <button type="submit" class="cart-options">Presunúť do košíka</button>
                         </form>
 
                     </div>
@@ -174,7 +173,7 @@
 
         </div> <!-- end saved-for-later -->
         @else
-        <h3>You have no items Saved for Later</h3>
+        <h3>Nemáte uložené žiadne položky na neskôr</h3>
         @endif
 
     </div>

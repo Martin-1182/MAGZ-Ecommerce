@@ -9,9 +9,9 @@
 @section('content')
 
 @component('components.breadcrumbs')
-<a href="/">Home</a>
+<a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
-<span>Shop</span>
+<span>Obchod</span>
 @endcomponent
 
 <div class="container">
@@ -33,7 +33,7 @@
 </div>
 <div class="products-section container">
     <div class="sidebar">
-        <h3>By Category</h3>
+        <h3>Kategórie</h3>
         <ul>
             @foreach ($categories as $category)
             <li class="{{ setActiveCategory($category->slug) }}"><a
@@ -45,11 +45,9 @@
         <div class="product-header">
             <h1 class="stylish-heading">{{ $categoryName }}</h1>
             <div class="sorting-p">
-                <strong>Price: </strong>
-                <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'low_high' ]) }}">Low to
-                    High</a> |
-                <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'high_low' ]) }}"> High to
-                    Low</a>
+                <strong>Cena: </strong>
+                <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'low_high' ]) }}"> Od najnižšej</a> |
+                <a href="{{ route('shop.index', ['category'=> request()->category, 'sort' =>'high_low' ]) }}"> Od najvyššej</a>
             </div>
         </div>
         <div class="products text-center">
@@ -63,7 +61,7 @@
                 <div class="product-price">{{ $product->presentPrice()  }}</div>
             </div>
             @empty
-            <div style="text-align: left;">No items found</div>
+            <div style="text-align: left;">Žiadna položka sa nenašla</div>
             @endforelse
 
 

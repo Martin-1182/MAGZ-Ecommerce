@@ -36,11 +36,11 @@
             </div> <!-- end top-nav -->
             <div class="hero container">
                 <div class="hero-copy">
-                    <h1>{{ config('app.name') }}</h1>
-                    <p>Includes multiple products, categories, a shopping cart and a checkout system with Stripe
-                        integration.</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="button button-white">Blog Post</a>
+                    <h1 class="hero-name anim-1">{{ config('app.name') }}</h1>
+                    <p class="anim-1">Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a pokladničný systém s
+                        integráciou Stripe.</p>
+                    <div class="hero-buttons anim-1">
+                        <a href="{{ url('/admin') }}" class="button button-white">Admin</a>
                         <a href="#" class="button button-white">GitHub</a>
                     </div>
                 </div> <!-- end hero-copy -->
@@ -63,24 +63,24 @@
                     sunt aliquid possimus temporibus enim eum hic.</p>
 
                 <div class="text-center button-container">
-                    <a href="#" class="button">Featured</a>
-                    <a href="#" class="button">On Sale</a>
+                    <a href="#" class="button">Novinky</a>
+                    <a href="#" class="button">Výpredaj</a>
                 </div>
                 <div class="products text-center">
                     @foreach ($products as $product)
-                    <div class="product">
+                    <div class="product box">
                         <a href="{{ route('shop.show', $product->slug) }}">
-                            <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}"></a>
+                            <img class="product-anime" src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}"></a>
                         <a href="{{ route('shop.show', $product->slug) }}">
-                            <div class="product-name">{{ $product->name }}</div>
+                            <div class="product-name product-anime">{{ $product->name }}</div>
                         </a>
-                        <div class="product-price">{{ $product->presentPrice() }}</div>
+                        <div class="product-price product-anime">{{ $product->presentPrice() }}</div>
                     </div>
                     @endforeach
                 </div> <!-- end products -->
 
                 <div class="text-center button-container">
-                    <a href="{{ route('shop.index') }}" class="button">View more products</a>
+                    <a href="{{ route('shop.index') }}" class="button">Zobraziť ďalšie produkty</a>
                 </div>
 
             </div> <!-- end container -->
@@ -93,6 +93,9 @@
 
         <!-- end #app -->
     </div>
+
     <script src="js/app.js"></script>
+    <script src="{{ asset('js/anime.js') }}"></script>
 </body>
+
 </html>

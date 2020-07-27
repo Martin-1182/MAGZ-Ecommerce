@@ -11,11 +11,11 @@
 @section('content')
 
    <div class="thank-you-section">
-       <h1>Thank you for <br> Your Order!</h1>
-       <p>A confirmation email was sent</p>
+       <h1>Ďakujeme Vám za <br> Vašu objednávku!</h1>
+       <p>Bol odoslaný potvrdzovací e-mail</p>
        <div class="spacer"></div>
        <div>
-           <a href="{{ url('/') }}" class="button">Home Page</a>
+           <a href="{{ url('/') }}" class="button">Domovská stránka</a>
        </div>
    </div>
 

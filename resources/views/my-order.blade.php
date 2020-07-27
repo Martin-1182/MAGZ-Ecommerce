@@ -9,7 +9,7 @@
 @section('content')
 
 @component('components.breadcrumbs')
-<a href="/">Home</a>
+<a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
 <span>My Order</span>
 @endcomponent
@@ -36,8 +36,8 @@
     <div class="sidebar">
 
         <ul>
-            <li><a href="{{ route('users.edit') }}">My Profile</a></li>
-            <li class="active"><a href="{{ route('orders.index') }}">My Orders</a></li>
+            <li><a href="{{ route('users.edit') }}">Profil</a></li>
+            <li class="active"><a href="{{ route('orders.index') }}">Objednávky</a></li>
         </ul>
     </div> <!-- end sidebar -->
     <div class="my-profile">

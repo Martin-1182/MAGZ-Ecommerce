@@ -101,7 +101,7 @@
 
                 <div class="login-container">
 
-                    <p>{{ __('signin-below') }}</p>
+                    <p>Prihláste sa tu:</p>
 
                     <form action="{{ route('voyager.login') }}" method="POST">
                         {{ csrf_field() }}
@@ -114,36 +114,42 @@
                         </div>
 
                         <div class="form-group form-group-default" id="passwordGroup">
-                            <label>{{ __('password') }}</label>
+                            <label>{{ __('heslo') }}</label>
                             <div class="controls">
-                                <input type="password" name="password" placeholder="{{ __('password') }}"
+                                <input type="password" name="password" placeholder="{{ __('heslo') }}"
                                     class="form-control" required>
                             </div>
                         </div>
 
                         <button type="submit" class="mr-3 btn btn-block btn-danger login-button">
                             <span class="signingin hidden"><span class="voyager-refresh"></span>
-                                {{ __('loggingin') }}...</span>
-                            <span class="signin">{{ __('login') }}</span>
+                                {{ __('prihlasujem') }}...</span>
+                            <span class="signin">{{ __('Prihlásiť') }}</span>
                         </button>
                     </form>
-                    <a href="{{ route('landing-page') }}" style="margin-left: 8px;" class=" btn btn-block btn-info login-button">
-                        <span class="signingin hidden"><span class="voyager-refresh"></span>
-                            {{ __('working') }}...</span>
-                        <span class="signin">{{ __('homepage') }}</span>
+                    <a href="{{ route('landing-page') }}" style="margin-left: 8px;"
+                        class=" btn btn-block btn-info login-button">
+                        <span class="signingin hidden">
+                            <span class="voyager-refresh">
+                            </span>
+                            {{ __('pracujem') }}...
+                        </span>
+                        <span class="signin">{{ __('Domovská stránka') }}</span>
                     </a>
                     <div style="clear:both"></div>
                     <div style="margin-top: 10px;">
-                        <div><strong>Email: </strong>demo@magz.com</div>
-                        <div><strong>Password: </strong>magz1111</div>
+                        <div><strong>DEMO Email: </strong>demo@magz.com</div>
+                        <div><strong>DEMO Heslo: </strong>magz1111</div>
+                        <div class="note" style="margin-top: 14px; background-color: whitesmoke; padding: 10px; border-radius: 5px;">
+                            <strong>Informácia</strong><br>
+                            Pre DEMO aplikáciu sú niektoré funkcie zakázané!
+                            <div class="alert alert-info">
+
+                                Radi Vám pripravíme ecommerce aplikáciu na mieru podľa vašich potrieb.
+
+                            </div>
+                        </div>
                     </div>
-
-                    <div style="margin-top: 10px;"><strong>Note: </strong>A lot of the functionality for this demo has
-                        been disabled: For example, deleting data and browsing/editing users and roles. If you would
-                        like full access, install it locally with the instructions found on the GitHub Repo.</div>
-
-                    <div style="margin-top: 10px;">A daily CRON job is scheduled at midnight to reset all the dummy data
-                        to a default state.</div>
 
                     @if(!$errors->isEmpty())
                     <div class="alert alert-red">

@@ -4,16 +4,42 @@
 
 @section('extra-css')
 <link rel="stylesheet" href="{{ asset('css/algolia.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+    .breadcrumbs {
+        font-family: 'Roboto', Arial, sans-serif !important;
+        font-size: 18px !important;
+        font-weight: 300;
+    }
 
+    header .top-nav ul {
+        font-family: 'Roboto', Arial, sans-serif !important;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    .container {
+    margin: auto;
+    max-width: 1200px!important;
+    }
+    dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    }
+    a:hover {
+    color: #878787;
+    }
+
+</style>
 @endsection
 
 @section('content')
 
 @component('components.breadcrumbs')
-<a href="/">Home</a>
+<a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
 <span>
-    <a href="{{ route('shop.index') }}">Shop</a>
+    <a href="{{ route('shop.index') }}">Obchod</a>
 </span>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
 <span>{{ $product->name }}</span>
@@ -82,11 +108,11 @@
 </div> <!-- end product-section -->
 
 
-  <!-- comments section -->
-  <div class="container comments-container">
-      <hr>
-      @comments(['model' => $product])
-  </div>
+<!-- comments section -->
+<div class="container comments-container">
+    <hr>
+    @comments(['model' => $product])
+</div>
 
 @include('partials.might-like')
 

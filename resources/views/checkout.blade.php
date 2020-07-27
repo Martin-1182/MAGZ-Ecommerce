@@ -27,15 +27,15 @@
     </div>
     @endif
 
-    <h1 class="checkout-heading stylish-heading">Checkout</h1>
+    <h1 class="checkout-heading stylish-heading">Pokladňa</h1>
     <div class="checkout-section">
         <div>
             <form action="{{ route('checkout.store')}}" method="POST" id="payment-form">
                 @csrf
-                <h2>Billing Details</h2>
+                <h2>Fakturačné údaje</h2>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email">Emailová Addresa</label>
                     @if (auth()->user())
                     <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}"
                         readonly>
@@ -45,23 +45,23 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Meno</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
+                    <label for="address">Adresa</label>
                     <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}"
                         required>
                 </div>
 
                 <div class="half-form">
                     <div class="form-group">
-                        <label for="city">City</label>
+                        <label for="city">Mesto</label>
                         <input type="text" class="form-control" id="city" name="city" value="{{ old('city') }}"
                             required>
                     </div>
                     <div class="form-group">
-                        <label for="province">Province</label>
+                        <label for="province">Štát</label>
                         <input type="text" class="form-control" id="province" name="province"
                             value="{{ old('province') }}" required>
                     </div>
@@ -69,12 +69,12 @@
 
                 <div class="half-form">
                     <div class="form-group">
-                        <label for="postalcode">Postal Code</label>
+                        <label for="postalcode">PSČ</label>
                         <input type="text" class="form-control" id="postalcode" name="postalcode"
                             value="{{ old('postalcode') }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone</label>
+                        <label for="phone">Telefón</label>
                         <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}"
                             required>
                     </div>
@@ -82,15 +82,15 @@
 
                 <div class="spacer"></div>
 
-                <h2>Payment Details</h2>
+                <h2>Platobné údaje</h2>
 
                 <div class="form-group">
-                    <label for="name_on_card">Name on Card</label>
+                    <label for="name_on_card">Meno na karte</label>
                     <input type="text" class="form-control" id="name_on_card" name="name_on_card" value="">
                 </div>
                 <div class="form-group">
                     <label for="card-element">
-                        Credit or debit card
+                        Kreditná alebo debetná karta
                     </label>
                     <div id="card-element">
                         <!-- A Stripe Element will be inserted here. -->
@@ -100,7 +100,7 @@
                     <div id="card-errors" role="alert"></div>
                 </div>
                 <div class="spacer"></div>
-                <button type="submit" id="complete-order" class="button-primary full-width">Complete Order</button>
+                <button type="submit" id="complete-order" class="button-primary full-width">UHRADIŤ OBJEDNÁVKU</button>
 
 
             </form>
@@ -112,7 +112,7 @@
 
 
         <div class="checkout-table-container">
-            <h2>Your Order</h2>
+            <h2>Vaša objednávka</h2>
 
             <div class="checkout-table">
                 @foreach (Cart::content() as $item)
@@ -135,15 +135,15 @@
 
             <div class="checkout-totals">
                 <div class="checkout-totals-left">
-                    Subtotal <br>
+                    Priebežne <br>
                     @if (session()->has('coupon'))
-                    Discount ({{ session()->get('coupon')['name'] }}) :
+                    Zľava ({{ session()->get('coupon')['name'] }}) :
                     <br>
                     <hr>
-                    New Subtotal <br>
+                    Po Zľave <br>
                     @endif
-                    Tax ({{config('cart.tax')}}%)<br>
-                    <span class="checkout-totals-total">Total</span>
+                    DPH ({{config('cart.tax')}}%)<br>
+                    <span class="checkout-totals-total">Spolu</span>
 
                 </div>
 
