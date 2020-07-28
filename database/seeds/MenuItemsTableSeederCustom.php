@@ -41,7 +41,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title' => 'Orders',
+                'title' => 'Objednávky',
                 'url' => '/admin/orders',
                 'route' => null,
             ]);
@@ -57,7 +57,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Products',
+                'title'   => 'Produkty',
                 'url'     => '/admin/products',
                 'route'   => null,
             ]);
@@ -73,7 +73,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Categories',
+                'title'   => 'Categórie',
                 'url'     => '/admin/category',
                 'route'   => null,
             ]);
@@ -89,7 +89,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Coupons',
+                'title'   => 'Kupóny',
                 'url'     => '/admin/coupons',
                 'route'   => null,
             ]);

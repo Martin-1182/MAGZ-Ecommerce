@@ -26,7 +26,7 @@ class ShopController extends Controller
             $categoryName = optional($categories->where('slug', request()->category)->first())->name;
         } else {
             $products = Product::where('featured', true);
-            $categoryName = 'Featured';
+            $categoryName = 'Novinky';
         }
         if (request()->sort == 'low_high') {
             $products = $products->orderBy('price')->paginate($pagination);
