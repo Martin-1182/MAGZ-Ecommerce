@@ -37,8 +37,7 @@
                         return markup;
                     },
                     empty: function(result) {
-                        return (
-                            'Sorry, we did not find any results for "' +
+                        return ('Ľutujeme, nenašli sme žiadne výsledky pre "' +
                             result.query +
                             '"'
                         );

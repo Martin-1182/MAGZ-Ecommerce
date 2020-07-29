@@ -36,7 +36,7 @@
     <div class="sidebar">
 
         <ul>
-            <li><a href="{{ route('users.edit') }}">My Profile</a></li>
+            <li><a href="{{ route('users.edit') }}">Profil</a></li>
             <li class="active"><a href="{{ route('orders.index') }}">Objednávky</a></li>
         </ul>
     </div> <!-- end sidebar -->

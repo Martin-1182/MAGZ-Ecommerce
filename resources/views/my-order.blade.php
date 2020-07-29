@@ -11,7 +11,7 @@
 @component('components.breadcrumbs')
 <a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
-<span>My Order</span>
+<span>Objednávky</span>
 @endcomponent
 
 <div class="container">

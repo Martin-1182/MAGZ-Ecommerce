@@ -12,9 +12,9 @@
 @section('content')
 
 @component('components.breadcrumbs')
-<a href="/">Home</a>
+<a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
-<span>Search</span>
+<span>Vyhľadávanie</span>
 @endcomponent
 
 <div class="container">
@@ -38,7 +38,7 @@
 <div class="container">
     <div class="search-results-container-algolia">
         <div>
-            <h2>Search</h2>
+            <h2>Vyhľadávanie</h2>
             <div id="search-box">
                 <!-- SearchBox widget will appear here -->
             </div>
@@ -46,7 +46,7 @@
             <div id="stats-container"></div>
 
             <div class="spacer"></div>
-            <h2>Categories</h2>
+            <h2>Kategórie</h2>
             <div id="refinement-list">
                 <!-- RefinementList widget will appear here -->
             </div>

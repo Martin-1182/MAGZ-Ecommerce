@@ -10,7 +10,7 @@
         instantsearch.widgets.hits({
             container: "#hits",
             templates: {
-                empty: "No results",
+                empty: "Žiadne výsledky",
                 item: function(item) {
                     return `
 
@@ -47,7 +47,7 @@
     search.addWidget(
         instantsearch.widgets.searchBox({
             container: "#search-box",
-            placeholder: "Search for products"
+            placeholder: "Vyhľadajte produkty"
         })
     );
     // initialize pagination

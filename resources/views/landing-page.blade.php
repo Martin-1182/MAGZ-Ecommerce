@@ -25,7 +25,7 @@
                 <div class="top-nav-left">
                     <a href="/">
                         <div class="logo">
-                            <img src="{{ asset('img/logo-new.svg') }}" height="70" alt="Logo">
+                            <img src="{{ asset('img/WS-logo-blue-edit.png') }}" height="70" alt="Logo">
                         </div>
                     </a>
                     {{ menu('main', 'partials.menus.main') }}
@@ -40,8 +40,8 @@
                     <p class="anim-1">Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a pokladničný systém s
                         integráciou Stripe.</p>
                     <div class="hero-buttons anim-1">
-                        <a href="{{ url('/admin') }}" class="button button-white">Admin</a>
-                        <a href="#" class="button button-white">GitHub</a>
+                        <a href="{{ url('/admin') }}" class="button">Admin</a>
+                        <a href="#" class="button">GitHub</a>
                     </div>
                 </div> <!-- end hero-copy -->
 

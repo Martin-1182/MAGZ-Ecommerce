@@ -12,7 +12,8 @@
 <a href="/"><i class="fa fa-home"></i> Domov</a>
 <i class="fa fa-chevron-right breadcrumb-separator"></i>
 <span>Obchod</span>
-@endcomponent <!-- end breadcrumbs -->
+@endcomponent
+<!-- end breadcrumbs -->
 
 <div class="cart-section container">
     <div>
@@ -32,15 +33,18 @@
         </div>
         @endif
         @if (Cart::count() > 0)
-        <h2>{{ Cart::count() }} produkt(y) v košíku</h2>
+        <h2>{{ Cart::count() }}
+            @if (Cart::count() > 1) produkty
+            @else produkt
+            @endif
+        </h2>
 
         <div class="cart-table">
             @foreach (Cart::content() as $item)
             <div class="cart-table-row">
                 <div class="cart-table-row-left">
                     <a href="{{ route('shop.show', $item->model->slug) }}">
-                        <img src="{{ asset('storage/'.$item->model->image) }}" alt="item"
-                            class="cart-table-img">
+                        <img src="{{ asset('storage/'.$item->model->image) }}" alt="item" class="cart-table-img">
                     </a>
                     <div class="cart-item-details">
                         <div class="cart-table-item">
@@ -51,20 +55,21 @@
                 </div>
                 <div class="cart-table-row-right">
                     <div class="cart-table-actions">
-                        <!-- <br><a href="#">Remove</a> -->
+
                         <form method="POST" action="{{ route('cart.destroy', $item->rowId) }}">
                             @csrf
                             {{ method_field('DELETE') }}
                             <button type="submit" class="cart-options">Odstrániť</button>
                         </form>
-                        <!-- <a href="#">Save for Later</a> -->
+
                         <form method="POST" action="{{ route('cart.switchToSaveForLater', $item->rowId) }}">
                             @csrf
                             <button type="submit" class="cart-options">Odložiť</button>
                         </form><br>
                     </div>
                     <div>
-                        <select class="quantity" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
+                        <select class="quantity" data-id="{{ $item->rowId }}"
+                            data-productQuantity="{{ $item->model->quantity }}">
                             @for ($i = 1; $i < 5 + 1 ; $i++) <option {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}
                                 </option>
                                 @endfor
@@ -121,7 +126,7 @@
                     <span class="cart-totals-total">{{ presentPrice($newTotal) }}</span>
                 </div>
             </div>
-            </div> <!-- end cart-totals -->
+        </div> <!-- end cart-totals -->
 
         <div class="cart-buttons">
             <a href="{{ route('shop.index') }}" class="button">Pokračovať v nákupe</a>
@@ -135,15 +140,18 @@
         @endif
         @if (Cart::instance('saveForLater')->count() > 0)
 
-        <h2>{{ Cart::instance('saveForLater')->count() }} produkt(y) uložené na neskôr</h2>
+        <h2>{{ Cart::instance('saveForLater')->count() }}
+            @if (Cart::instance('saveForLater')->count() > 1) produkty
+            @else produkt
+
+            @endif</h2>
 
         <div class="saved-for-later cart-table">
             @foreach (Cart::instance('saveForLater')->content() as $item)
             <div class="cart-table-row">
                 <div class="cart-table-row-left">
                     <a href="{{ route('shop.show', $item->model->slug) }}">
-                        <img src="{{ asset('storage/'.$item->model->image) }}" alt="item"
-                            class="cart-table-img">
+                        <img src="{{ asset('storage/'.$item->model->image) }}" alt="item" class="cart-table-img">
                     </a>
                     <div class="cart-item-details">
                         <div class="cart-table-item">

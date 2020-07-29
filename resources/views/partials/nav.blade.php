@@ -2,7 +2,7 @@
     <div class="top-nav container">
         <div class="top-nav-left">
             <a href="/">
-                <div class="logo"><img src="{{ asset('img/logo-new.svg') }}" height="70" alt=""></div>
+                <div class="logo"><img src="{{ asset('img/WS-logo-blue-edit.png') }}" height="70" alt=""></div>
             </a>
             @if (! (request()->is('checkout') || request()->is('guestCheckout')))
             {{ menu('main', 'partials.menus.main') }}

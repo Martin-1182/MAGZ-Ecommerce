@@ -16,13 +16,13 @@ class CategoryTableSeeder extends Seeder
         $now = Carbon::now()->toDateTimeString();
 
         Category::insert([
-            ['name' => 'Laptops', 'slug' => 'laptops', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Desktops', 'slug' => 'desktops', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Mobile Phones', 'slug' => 'mobile-phones', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Tablets', 'slug' => 'tablets', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'TVs', 'slug' => 'tvs', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Digital Cameras', 'slug' => 'digital-cameras', 'created_at' => $now, 'updated_at' => $now],
-            ['name' => 'Appliances', 'slug' => 'appliances', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Notebooky', 'slug' => 'notebooky', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Stolové počítače', 'slug' => 'stolove-pocitace', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Mobilné telefóny', 'slug' => 'mobilne-telefofny', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Tablety', 'slug' => 'tablety', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Televízory', 'slug' => 'televizory', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Digitálne fotoaparáty', 'slug' => 'digitalne-fotoaparaty', 'created_at' => $now, 'updated_at' => $now],
+            ['name' => 'Spotrebiče', 'slug' => 'spotrebice', 'created_at' => $now, 'updated_at' => $now],
         ]);
     }
 }

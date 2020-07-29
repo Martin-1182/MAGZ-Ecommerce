@@ -254,6 +254,7 @@ h2 {
 .breadcrumbs {
   background: #F5F5F5;
   border-bottom: 1px solid #CDCDCD;
+  border-top: 1px solid #CDCDCD;
   padding: 24px 0;
 }
 
@@ -833,9 +834,9 @@ form button[type=submit] {
 }
 
 header.with-background {
-  background: url("/img/triangles.svg");
+  background: url("/img/Pattern-Randomized.svg");
   background-size: cover;
-  color: #e9e9e9;
+  color: #212121;
 }
 
 header.with-background .top-nav {
@@ -851,11 +852,11 @@ header.with-background .top-nav .logo {
 }
 
 header.with-background .top-nav ul a {
-  color: #e9e9e9;
+  color: #212121;
 }
 
 header.with-background .top-nav ul a:hover {
-  color: #d0d0d0;
+  color: #080808;
 }
 
 header.with-background .hero {
@@ -884,7 +885,7 @@ header.with-background .hero .button {
 }
 
 header {
-  background: #0e1111;
+  background: white;
 }
 
 header .top-nav {
@@ -897,7 +898,7 @@ header .top-nav {
 header .top-nav .logo {
   font-weight: bold;
   font-size: 28px;
-  color: #e9e9e9;
+  color: #212121;
   margin-right: 58px;
 }
 
@@ -917,11 +918,11 @@ header .top-nav ul li:last-child {
 }
 
 header .top-nav ul a {
-  color: #e9e9e9;
+  color: #212121;
 }
 
 header .top-nav ul a:hover {
-  color: #d0d0d0;
+  color: #080808;
 }
 
 header .top-nav ul .cart-count {
