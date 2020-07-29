@@ -20,7 +20,7 @@
             @if(isset($guest_commenting) and $guest_commenting == true)
                 <div class="form-group">
                     <label for="message">Vaše meno:</label>
-                    <input type="text" class="form-control @if($errors->has('guest_name')) is-invalid @endif" name="guest_name" />
+                    <input type="text" class="form-control @if($errors->has('guest_name')) is-invalid @endif" name="guest_name" required/>
                     @error('guest_name')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Váš email:</label>
-                    <input type="email" class="form-control @if($errors->has('guest_email')) is-invalid @endif" name="guest_email" />
+                    <input type="email" class="form-control @if($errors->has('guest_email')) is-invalid @endif" name="guest_email" required/>
                     @error('guest_email')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <label for="message">Tu môžete písať svoj komentár:</label>
-                <textarea class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="4"></textarea>
+                <textarea class="form-control @if($errors->has('message')) is-invalid @endif" name="message" rows="4" required></textarea>
                 <div class="invalid-feedback">
                     Vaša správa je vyžadovaná.
                 </div>
