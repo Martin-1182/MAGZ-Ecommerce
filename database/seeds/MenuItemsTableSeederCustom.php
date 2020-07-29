@@ -73,7 +73,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Categórie',
+                'title'   => 'Kategórie',
                 'url'     => '/admin/category',
                 'route'   => null,
             ]);
@@ -105,7 +105,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Category Products',
+                'title'   => 'Kategórie Produktov',
                 'url'     => '/admin/category-product',
                 'route'   => null,
             ]);
@@ -121,7 +121,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Roles',
+                'title'   => 'Role',
                 'url'     => '',
                 'route'   => 'voyager.roles.index',
             ]);
@@ -137,7 +137,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Users',
+                'title'   => 'Užívatelia',
                 'url'     => '',
                 'route'   => 'voyager.users.index',
             ]);
@@ -153,7 +153,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Media',
+                'title'   => 'Médiá',
                 'url'     => '',
                 'route'   => 'voyager.media.index',
             ]);
@@ -169,7 +169,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Posts',
+                'title'   => 'Príspevky',
                 'url'     => '',
                 'route'   => 'voyager.posts.index',
             ]);
@@ -184,7 +184,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Pages',
+                'title'   => 'Stránky',
                 'url'     => '',
                 'route'   => 'voyager.pages.index',
             ]);
@@ -199,7 +199,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $toolsMenuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Tools',
+                'title'   => 'Náradie',
                 'url'     => '',
             ]);
 
@@ -214,7 +214,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Settings',
+                'title'   => 'Nastavenia',
                 'url'     => '',
                 'route'   => 'voyager.settings.index',
             ]);
@@ -227,25 +227,9 @@ class MenuItemsTableSeederCustom extends Seeder
                 'order'      => 13,
             ])->save();
 
-
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Categories',
-                'url'     => '',
-                'route'   => 'voyager.categories.index',
-            ]);
-
-            $menuItem->fill([
-                'target'     => '_self',
-                'icon_class' => 'voyager-categories',
-                'color'      => null,
-                'parent_id'  => null,
-                'order'      => 14,
-            ])->save();
-
-            $menuItem = MenuItem::firstOrNew([
-                'menu_id' => $menu->id,
-                'title'   => 'Menu Builder',
+                'title'   => 'Menu',
                 'url'     => '',
                 'route'   => 'voyager.menus.index',
             ]);
@@ -261,7 +245,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Database',
+                'title'   => 'Databáza',
                 'url'     => '',
                 'route'   => 'voyager.database.index',
             ]);
@@ -277,7 +261,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Compass',
+                'title'   => 'Kompas',
                 'url'     => '',
                 'route'   => 'voyager.compass.index',
             ]);
@@ -300,7 +284,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Shop',
+                'title'   => 'Obchod',
                 'url'     => '',
                 'route'   => 'shop.index',
             ]);
@@ -316,7 +300,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'About',
+                'title'   => 'O nás',
                 'url'     => '#',
                 'route'   => null,
             ]);
@@ -333,7 +317,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'Blog',
-                'url'     => 'https://blog.halaj.online',
+                'url'     => 'https://blog-ecommerce.websystem.sk',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {
@@ -356,7 +340,7 @@ class MenuItemsTableSeederCustom extends Seeder
 
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
-                'title'   => 'Follow Me:',
+                'title'   => 'Sledujte nás:',
                 'url'     => '',
                 'route'   => null,
             ]);
