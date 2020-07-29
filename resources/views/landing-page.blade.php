@@ -25,7 +25,7 @@
                 <div class="top-nav-left">
                     <a href="/">
                         <div class="logo">
-                            <img src="{{ asset('img/WS-logo-blue-edit.png') }}" height="70" alt="Logo">
+                            <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="70" alt="Logo">
                         </div>
                     </a>
                     {{ menu('main', 'partials.menus.main') }}

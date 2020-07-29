@@ -953,9 +953,9 @@ header .top-nav-right {
 }
 
 footer {
-  background: #0e1111;
-  color: #e9e9e9;
-  padding: 40px 0;
+  background: #CDCDCD;
+  color: #212121;
+  padding: 30px 0;
 }
 
 .footer-content {
@@ -964,7 +964,7 @@ footer {
 }
 
 .footer-content .heart {
-  color: #FFBABA;
+  color: #FFBABA !important;
 }
 
 .footer-content ul {
@@ -974,7 +974,11 @@ footer {
 }
 
 .footer-content a {
-  color: #e9e9e9;
+  color: #212121;
+}
+
+.footer-content .fa {
+  color: #212121;
 }
 
 .featured-section {
