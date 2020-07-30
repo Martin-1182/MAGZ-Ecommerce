@@ -15,29 +15,30 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-
 </head>
-
 <body>
     <div id="app">
         <header class="with-background">
+
             <div class="top-nav container">
-                <div class="top-nav-left">
-                    <a href="/">
+                <a href="/">
                         <div class="logo">
                             <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="70" alt="Logo">
                         </div>
                     </a>
+                <div class="top-nav-left">
                     {{ menu('main', 'partials.menus.main') }}
                 </div>
                 <div class="top-nav-right">
                     @include('partials.menus.main-right')
                 </div>
-            </div> <!-- end top-nav -->
+             <!-- end top-nav -->
+</div>
             <div class="hero container">
                 <div class="hero-copy">
                     <h1 class="hero-name anim-1">{{ config('app.name') }}</h1>
-                    <p class="anim-1">Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a pokladničný systém s
+                    <p class="anim-1">Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a
+                        pokladničný systém s
                         integráciou Stripe.</p>
                     <div class="hero-buttons anim-1">
                         <a href="{{ url('/admin') }}" class="button">Admin</a>
@@ -70,7 +71,8 @@
                     @foreach ($products as $product)
                     <div class="product box">
                         <a href="{{ route('shop.show', $product->slug) }}">
-                            <img class="product-anime" src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}"></a>
+                            <img class="product-anime" src="{{ asset('storage/'.$product->image) }}"
+                                alt="{{ $product->name }}"></a>
                         <a href="{{ route('shop.show', $product->slug) }}">
                             <div class="product-name product-anime">{{ $product->name }}</div>
                         </a>
@@ -96,6 +98,46 @@
 
     <script src="js/app.js"></script>
     <script src="{{ asset('js/anime.js') }}"></script>
+    <script>
+        var show = function (elem) {
+        elem.style.display = 'block';
+        };
+
+        var hide = function (elem) {
+        elem.style.display = 'none';
+        };
+
+        var toggle = function (elem) {
+
+        // If the element is visible, hide it
+        if (window.getComputedStyle(elem).display === 'block') {
+        hide(elem);
+        return;
+        }
+
+        // Otherwise, show it
+        show(elem);
+
+        };
+
+        // Listen for click events
+        document.addEventListener('click', function (event) {
+
+        // Make sure clicked element is our toggle
+        if (!event.target.classList.contains('toggle')) return;
+
+        // Prevent default link behavior
+        event.preventDefault();
+
+        // Get the content
+        var content = document.querySelector(event.target.hash);
+        if (!content) return;
+
+        // Toggle the content
+        toggle(content);
+
+        }, false);
+    </script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 import { gsap } from "gsap";
-import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
-var rule = CSSRulePlugin.getRule(".hero-name:after ");
+gsap.registerPlugin(ScrollTrigger);
+
 gsap.from(".anim-1", {
     opacity: 0,
     duration: 1,

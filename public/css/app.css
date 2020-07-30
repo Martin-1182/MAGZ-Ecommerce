@@ -899,7 +899,16 @@ header .top-nav .logo {
   font-weight: bold;
   font-size: 28px;
   color: #212121;
-  margin-right: 58px;
+}
+
+header .top-nav .checkbtn {
+  font-size: 30px;
+  color: #212121;
+  float: right;
+  margin-right: 40px;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
 }
 
 header .top-nav ul {

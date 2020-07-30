@@ -357,7 +357,7 @@ class MenuItemsTableSeederCustom extends Seeder
             $menuItem = MenuItem::firstOrNew([
                 'menu_id' => $menu->id,
                 'title'   => 'fa-globe',
-                'url'     => 'https://halaj.online',
+                'url'     => 'https://websystem.sk',
                 'route'   => null,
             ]);
             if (!$menuItem->exists) {
