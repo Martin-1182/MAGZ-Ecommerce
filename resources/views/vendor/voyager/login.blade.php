@@ -140,7 +140,7 @@
                     <div style="margin-top: 10px;">
                         <div><strong>DEMO Email: </strong>demo@magz.com</div>
                         <div><strong>DEMO Heslo: </strong>magz1111</div>
-                        <div class="note" style="margin-top: 14px; background-color: whitesmoke; padding: 10px; border-radius: 5px;">
+                        <div class="note" style="margin-top: 14px; margin-bottom: 30px; background-color: whitesmoke; padding: 10px; border-radius: 5px;">
                             <strong>Informácia</strong><br>
                             Pre DEMO aplikáciu sú niektoré funkcie zakázané!
                             <div class="alert alert-info">
@@ -148,8 +148,11 @@
                                 Radi Vám pripravíme ecommerce aplikáciu na mieru podľa vašich potrieb.
 
                             </div>
+
                         </div>
+
                     </div>
+
 
                     @if(!$errors->isEmpty())
                     <div class="alert alert-red">
