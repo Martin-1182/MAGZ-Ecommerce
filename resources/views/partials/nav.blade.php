@@ -2,8 +2,8 @@
     <nav>
         <div id="navbar">
             <a href="/">
-                <div class="logo">
-                    <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="90" alt="Logo">
+                <div class="logo" id="logo">
+                    <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="80" alt="Logo">
                 </div>
             </a>
             <div id="links">
@@ -18,6 +18,9 @@
                     @endif
                 </div>
             </div>
+
+
+
 
             <div class="mobile-btn">
                 <a id="menu-btn" onclick="myFunction()" class="fa fa-bars fa-2x"></a>

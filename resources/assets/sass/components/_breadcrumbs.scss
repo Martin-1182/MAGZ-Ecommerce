@@ -1,13 +1,21 @@
 .breadcrumbs {
+    a {
+        font-family: "Montserrat", sans-serif;
+    }
     background: $light-gray-background;
     border-bottom: 1px solid $separator-color;
     border-top: 1px solid $separator-color;
     padding: 24px 0;
+    margin-top: 25px;
     .breadcrumb-separator {
+        span {
+            font-family: "Montserrat", sans-serif;
+        }
         font-size: 14px;
         color: lighten($text-color, 20%);
     }
     .breadcrumbs-container {
+        font-family: "Montserrat", sans-serif;
         display: flex;
         justify-content: space-between;
         align-items: center;

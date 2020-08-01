@@ -130,7 +130,7 @@
     
     #links {
         display: grid;
-        justify-content: right;
+        justify-content: revert;
         align-content: center;
         grid-auto-flow: column;
         grid-gap: 1.5em;

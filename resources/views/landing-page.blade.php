@@ -15,19 +15,31 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <script>
+        // Mobile Menu Toggle Button JavaScript
+            function myFunction() {
+            var x = document.getElementById("mobile-menu");
+            if (x.style.display === "none") {
+            x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+            }
+    </script>
 </head>
 
 <body>
     <div id="app">
         <header class="with-background">
 
-                <nav>
-                    <div id="navbar">
-                        <a href="/">
-                            <div class="logo">
-                                <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="90" alt="Logo">
-                            </div>
-                        </a>
+            <nav>
+                <div id="navbar">
+                    <a href="/">
+                        <div class="logo">
+                            <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="80" alt="Logo">
+                        </div>
+                    </a>
+
                         <div id="links">
                             <div class="top-nav-left">
                                 {{ menu('main', 'partials.menus.main') }}
@@ -37,40 +49,32 @@
                             </div>
                         </div>
 
-                        <div class="mobile-btn">
-                            <a id="menu-btn" onclick="myFunction()" class="fa fa-bars fa-2x"></a>
-                        </div>
-
-                    </div>
-                </nav>
-
-                <!-- Mobile Menu -->
-                <div id="mobile-menu" class="mobile-menu">
-                    <div class="top-nav-left">
-                        {{ menu('main', 'partials.menus.main') }}
-                    </div>
-                    <div class="top-nav-right">
-                        @include('partials.menus.main-right')
+                    <div class="mobile-btn">
+                        <a id="menu-btn" onclick="myFunction()">
+                            <i class="fa fa-bars fa-2x"></i>
+                        </a>
                     </div>
                 </div>
-               <!-- <a href="/">
-                    <div class="logo">
-                        <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="70" alt="Logo">
-                    </div>
-                </a>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
                 <div class="top-nav-left">
                     {{ menu('main', 'partials.menus.main') }}
                 </div>
                 <div class="top-nav-right">
                     @include('partials.menus.main-right')
-                </div>end top-nav -->
-
+                </div>
+            </div>
             <div class="hero container">
                 <div class="hero-copy">
                     <h1 class="hero-name anim-1">{{ config('app.name') }}</h1>
                     <p class="anim-1">Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a
                         pokladničný systém s
-                        integráciou Stripe.</p>
+                        integráciou <a href="https://stripe.com/en-sk" target="_blank" class="text-danger">Stripe.</a><br>
+                        Vyskúšajte nášu demo ecommerce aplikáciu s administračným rozhranním pre jednoduchú správu
+                        objednávok,
+                        produktov, komentárov a kategórií. </p>
+
                     <div class="hero-buttons anim-1">
                         <a href="{{ url('/admin') }}" class="button">Admin</a>
                         <a href="#" class="button">GitHub</a>
@@ -86,7 +90,7 @@
         <div class="featured-section">
 
             <div class="container">
-                <h1 class="text-center">{{ config('app.name') }}</h1>
+                <h1 class="text-center">WebSystem {{ config('app.name') }}</h1>
 
                 <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae
                     nisi,
@@ -129,17 +133,7 @@
 
     <script src="js/app.js"></script>
     <script src="{{ asset('js/anime.js') }}"></script>
-    <script>
-        // Mobile Menu Toggle Button JavaScript
-        function myFunction() {
-        var x = document.getElementById("mobile-menu");
-        if (x.style.display === "none") {
-        x.style.display = "block";
-        } else {
-        x.style.display = "none";
-        }
-        }
-    </script>
+
 </body>
 
 </html>
