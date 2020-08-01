@@ -17,21 +17,21 @@
                 </ul>
             </div>
             @endif
-            <h2>Forgot Password?</h2>
+            <h2>Zabudli ste heslo?</h2>
             <div class="spacer"></div>
             <form action="{{ route('password.email') }}" method="POST">
                 {{ csrf_field() }}
                 <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Email" required
                     autofocus>
                 <div class="login-container">
-                    <button type="submit" class="auth-button">Send Password Reset Link</button>
+                    <button type="submit" class="auth-button">Obnoviť heslo</button>
                 </div>
 
 
             </form>
         </div>
         <div class="auth-right">
-            <h2>Forgotten Password Information</h2>
+            <h2>Zabudnuté heslo info.</h2>
             <div class="spacer"></div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dicta obcaecati exercitationem ut atque
                 inventore cum. Magni autem error ut!</p>

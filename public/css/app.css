@@ -50,6 +50,10 @@ img {
   max-width: 1200px;
 }
 
+strong {
+  font-weight: bold !important;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -834,7 +838,7 @@ form button[type=submit] {
 }
 
 header.with-background {
-  background: url("/img/Pattern-Randomized.svg");
+  background: white;
   background-size: cover;
   color: #212121;
 }
@@ -863,7 +867,7 @@ header.with-background .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
-  padding-top: 20px;
+  padding-top: 160px;
   padding-bottom: 84px;
 }
 
@@ -899,16 +903,6 @@ header .top-nav .logo {
   font-weight: bold;
   font-size: 28px;
   color: #212121;
-}
-
-header .top-nav .checkbtn {
-  font-size: 30px;
-  color: #212121;
-  float: right;
-  margin-right: 40px;
-  line-height: 80px;
-  cursor: pointer;
-  display: none;
 }
 
 header .top-nav ul {
@@ -951,18 +945,183 @@ header .top-nav ul .cart-count span {
   margin-right: 6px;
 }
 
-header .top-nav-left {
-  display: flex;
-  align-items: center;
+#navbar {
+  display: grid;
+  min-height: 100px;
+  grid-auto-flow: column;
+  background-color: #fcfcfc;
+  grid-gap: 1.5em;
+  padding: 0 40px;
+  box-shadow: -1px 4px 5px 0px #d1cdd1;
 }
 
-header .top-nav-right {
+#logo {
+  display: grid;
+  justify-content: start;
+  align-content: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+}
+
+#logo .logo {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.logo span {
+  color: #0474bc;
+}
+
+#links {
+  display: grid;
+  justify-content: right;
+  align-content: center;
+  grid-auto-flow: column;
+  grid-gap: 1.5em;
+  font-family: "Montserrat", sans-serif;
+}
+
+#links ul {
   display: flex;
-  align-items: center;
+  text-transform: uppercase;
+  padding-top: 8px;
+  font-weight: 400;
+}
+
+#links ul li {
+  margin-right: 38px;
+}
+
+#links ul li:last-child {
+  margin-right: 0;
+}
+
+#links ul a {
+  color: #212121;
+}
+
+#links ul a:hover {
+  color: #080808;
+}
+
+#links ul .cart-count {
+  display: inline-block;
+  background: #FFD94D;
+  color: #212121;
+  line-height: 0;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+#links ul .cart-count span {
+  display: inline-block;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  color: #464646;
+}
+
+/* =======================
+******* Mobile Menu ******
+========================*/
+
+.mobile-menu {
+  display: block;
+  list-style-type: none;
+  background-color: #fff;
+  width: 100%;
+  padding: 5px 0 5px 0;
+  z-index: 55;
+  text-align: center;
+}
+
+.mobile-menu .cart-count {
+  display: inline-block;
+  background: #FFD94D;
+  color: #212121;
+  line-height: 0;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.mobile-menu .cart-count span {
+  display: inline-block;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.mobile-menu a {
+  font-family: "Montserrat", sans-serif;
+}
+
+.mobile-menu a:hover {
+  color: #585151;
+}
+
+.mobile-menu .top-nav-right li,
+.mobile-menu .top-nav-left li {
+  background: #3EBFA4;
+  padding: 2%;
+  margin: 1%;
+}
+
+.mobile-links li {
+  line-height: 2.8rem;
+}
+
+.mobile-btn {
+  display: grid;
+  justify-content: right;
+  align-content: center;
+  grid-auto-flow: column;
+  cursor: pointer;
+}
+
+.nav-list {
+  font-family: "Montserrat", sans-serif;
+  list-style-type: none;
+}
+
+.nav-list:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* Mobile to Tablet  */
+
+@media (min-width: 320px) and (max-width: 767px) {
+  #links,
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Tablet to Desktop */
+
+@media (min-width: 768px) {
+  .mobile-menu,
+  .mobile-btn,
+  .fa-bars {
+    display: none;
+  }
 }
 
 footer {
-  background: #CDCDCD;
+  background: #FCFCFC;
   color: #212121;
   padding: 30px 0;
 }

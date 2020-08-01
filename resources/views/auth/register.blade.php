@@ -59,7 +59,7 @@
 
             &nbsp;
             <div class="spacer"></div>
-            <p><strong>Vernostný program</strong></p>
+            <p><strong>Vernostný program.</strong></p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt debitis, amet magnam accusamus nisi
                 distinctio eveniet ullam. Facere, cumque architecto.</p>
         </div>

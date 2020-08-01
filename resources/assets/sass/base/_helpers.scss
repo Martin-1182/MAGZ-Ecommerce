@@ -2,9 +2,13 @@
     clear: both;
     content: '';
     display: table;
-  }
+}
 
-  .container {
+.container {
     margin: auto;
     max-width: 1200px;
-  }
+}
+
+strong {
+    font-weight: bold!important;
+}

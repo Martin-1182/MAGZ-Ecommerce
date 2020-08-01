@@ -16,24 +16,55 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 </head>
+
 <body>
     <div id="app">
         <header class="with-background">
 
-            <div class="top-nav container">
-                <a href="/">
-                        <div class="logo">
-                            <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="70" alt="Logo">
+                <nav>
+                    <div id="navbar">
+                        <a href="/">
+                            <div class="logo">
+                                <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="90" alt="Logo">
+                            </div>
+                        </a>
+                        <div id="links">
+                            <div class="top-nav-left">
+                                {{ menu('main', 'partials.menus.main') }}
+                            </div>
+                            <div class="top-nav-right">
+                                @include('partials.menus.main-right')
+                            </div>
                         </div>
-                    </a>
+
+                        <div class="mobile-btn">
+                            <a id="menu-btn" onclick="myFunction()" class="fa fa-bars fa-2x"></a>
+                        </div>
+
+                    </div>
+                </nav>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="mobile-menu">
+                    <div class="top-nav-left">
+                        {{ menu('main', 'partials.menus.main') }}
+                    </div>
+                    <div class="top-nav-right">
+                        @include('partials.menus.main-right')
+                    </div>
+                </div>
+               <!-- <a href="/">
+                    <div class="logo">
+                        <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="70" alt="Logo">
+                    </div>
+                </a>
                 <div class="top-nav-left">
                     {{ menu('main', 'partials.menus.main') }}
                 </div>
                 <div class="top-nav-right">
                     @include('partials.menus.main-right')
-                </div>
-             <!-- end top-nav -->
-</div>
+                </div>end top-nav -->
+
             <div class="hero container">
                 <div class="hero-copy">
                     <h1 class="hero-name anim-1">{{ config('app.name') }}</h1>
@@ -99,44 +130,15 @@
     <script src="js/app.js"></script>
     <script src="{{ asset('js/anime.js') }}"></script>
     <script>
-        var show = function (elem) {
-        elem.style.display = 'block';
-        };
-
-        var hide = function (elem) {
-        elem.style.display = 'none';
-        };
-
-        var toggle = function (elem) {
-
-        // If the element is visible, hide it
-        if (window.getComputedStyle(elem).display === 'block') {
-        hide(elem);
-        return;
+        // Mobile Menu Toggle Button JavaScript
+        function myFunction() {
+        var x = document.getElementById("mobile-menu");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        } else {
+        x.style.display = "none";
         }
-
-        // Otherwise, show it
-        show(elem);
-
-        };
-
-        // Listen for click events
-        document.addEventListener('click', function (event) {
-
-        // Make sure clicked element is our toggle
-        if (!event.target.classList.contains('toggle')) return;
-
-        // Prevent default link behavior
-        event.preventDefault();
-
-        // Get the content
-        var content = document.querySelector(event.target.hash);
-        if (!content) return;
-
-        // Toggle the content
-        toggle(content);
-
-        }, false);
+        }
     </script>
 </body>
 

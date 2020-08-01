@@ -32,6 +32,16 @@
     @include('partials.footer')
 
     @yield('extra-js')
-
+<script>
+    // Mobile Menu Toggle Button JavaScript
+    function myFunction() {
+    var x = document.getElementById("mobile-menu");
+    if (x.style.display === "none") {
+    x.style.display = "block";
+    } else {
+    x.style.display = "none";
+    }
+    }
+</script>
 </body>
 </html>

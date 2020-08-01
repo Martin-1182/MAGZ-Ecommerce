@@ -290,6 +290,15 @@
                             /* Small Devices, Tablets */
                             
                             @media only screen and (max-width: 768px) {
+                                header.with-background .hero {
+                                    padding-top: 0;
+                                    padding-bottom: 0;
+                                }
+                                .login-container {
+                                    label {
+                                        font-size: 17px;
+                                    }
+                                }
                                 .product-section-images {
                                     display: grid;
                                     grid-template-columns: repeat(6, 1fr);
@@ -396,30 +405,6 @@
                                     border-radius: 4px;
                                     box-sizing: border-box;
                                     word-wrap: break-word;
-                                }
-                                header .top-nav ul {
-                                    display: block;
-                                    text-transform: uppercase;
-                                    padding-top: 8px;
-                                    font-weight: 400;
-                                }
-                                header .top-nav-left {
-                                    display: block;
-                                    padding-left: 10px;
-                                }
-                                header .top-nav-right {
-                                    display: block;
-                                    align-items: center;
-                                    padding-left: 10px;
-                                }
-                                header .with-background .top-nav ul,
-                                header .top-nav ul {
-                                    margin: 10px 10px 0;
-                                }
-                                header .with-background .top-nav .logo,
-                                header .top-nav .logo {
-                                    text-align: center;
-                                    padding-left: 10px;
                                 }
                             }
                             /* Custom, iPhone Retina */
