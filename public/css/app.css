@@ -284,6 +284,7 @@ h2 {
 }
 
 .button {
+  font-family: "Montserrat", Arial, sans-serif !important;
   border: 1px solid #212121;
   padding: 12px 40px;
 }
@@ -294,6 +295,7 @@ h2 {
 }
 
 .button-white {
+  font-family: "Montserrat", Arial, sans-serif !important;
   border: 1px solid #e9e9e9;
   color: #e9e9e9 !important;
 }
@@ -304,6 +306,7 @@ h2 {
 }
 
 .button-primary {
+  font-family: "Montserrat", Arial, sans-serif !important;
   background: #3EBFA4;
   color: white !important;
   padding: 12px 40px;
@@ -319,6 +322,7 @@ h2 {
 }
 
 .button-plain {
+  font-family: "Montserrat", Arial, sans-serif !important;
   border: 1px solid #212121 !important;
   background: transparent;
 }
@@ -1657,6 +1661,7 @@ h1.checkout-heading {
 }
 
 .auth-pages .auth-button {
+  font-family: "Montserrat", Arial, sans-serif !important;
   background: #212121;
   color: #e9e9e9;
   border-radius: 5px;

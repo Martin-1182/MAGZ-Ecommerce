@@ -133,6 +133,10 @@
                                         width: 130px;
                                     }
                                 }
+                                .thank-you-section {
+                                    grid-template-columns: 1fr;
+                                    margin: 10px;
+                                }
                                 .might-like-section h2 {
                                     margin-left: 10px;
                                 }

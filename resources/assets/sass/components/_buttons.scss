@@ -1,4 +1,5 @@
 .button {
+    font-family: 'Montserrat', Arial, sans-serif!important;
     border: 1px solid $text-color;
     padding: 12px 40px;
     &:hover {
@@ -8,6 +9,7 @@
 }
 
 .button-white {
+    font-family: 'Montserrat', Arial, sans-serif!important;
     border: 1px solid $white;
     color: $white !important;
     &:hover {
@@ -17,6 +19,7 @@
 }
 
 .button-primary {
+    font-family: 'Montserrat', Arial, sans-serif!important;
     background: $primary;
     color: white !important;
     padding: 12px 40px;
@@ -30,6 +33,7 @@
 }
 
 .button-plain {
+    font-family: 'Montserrat', Arial, sans-serif!important;
     border: 1px solid $text-color !important;
     background: transparent;
 }
