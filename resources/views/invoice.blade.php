@@ -35,8 +35,9 @@
             </div>
 
             <div class="col-xs-4">
-                <img src="https://res.cloudinary.com/dhrpbxhvh/image/upload/v1595600812/WS-logo-blue-edit_wu6uuz.png"
-                    height="75px" alt="logo">
+                <h4>
+                    WebSystem s.r.o.
+                </h4>
             </div>
         </div>
 
@@ -89,9 +90,6 @@
                     <th>Zoznam položiek</th>
                     <th></th>
                     <th class="text-right">Množstvo</th>
-                    @if ($order->billing_discount > 0)
-                    <th class="text-right">Zlava</th>
-                    @endif
                     <th class="text-right">Cena</th>
                 </tr>
             </thead>
@@ -104,9 +102,6 @@
                     </td>
                     <td></td>
                     <td class="text-right">{{ $product->pivot->quantity }}</td>
-                    @if ($order->billing_discount > 0)
-                    <td class="text-right">{{ presentPrice($order->billing_discount) }}</td>
-                    @endif
                     <td class="text-right">{{ presentPrice($product->price) }}</td>
 
                 </tr>
@@ -119,6 +114,16 @@
             <div class="col-xs-5">
                 <table style="width: 100%">
                     <tbody>
+                        @if ($order->billing_discount > 0)
+                        <tr class="well" style="padding: 5px">
+                            <th style="padding: 5px">
+                                <div> Zlava </div>
+                            </th>
+                            <td style="padding: 5px" class="text-right"><strong>
+                                    {{ presentPrice($order->billing_discount) }} </strong>
+                            </td>
+                        </tr>
+                        @endif
                         <tr class="well" style="padding: 5px">
                             <th style="padding: 5px">
                                 <div> Spolu </div>

@@ -83,13 +83,13 @@ class UsersController extends Controller
         if (!$request->filled('password')) {
             $user->fill($input)->save();
 
-            return back()->with('success_message', 'Profile updated successfully!');
+            return back()->with('success_message', 'Profil úspešne aktualizovaný!');
         }
 
         $user->password = bcrypt($request->password);
         $user->fill($input)->save();
 
-        return back()->with('success_message', 'Profile (and password) updated successfully!');
+        return back()->with('success_message', 'Profil (a heslo) úspešne aktualizované!');
     }
 
     /**
