@@ -3,7 +3,7 @@
     border: 1px solid $text-color;
     padding: 12px 40px;
     &:hover {
-        color: $white;
+        color: $white!important;
         background: $text-color;
     }
 }

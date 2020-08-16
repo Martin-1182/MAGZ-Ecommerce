@@ -135,13 +135,17 @@
     margin-top: 20px;
   }
 
+  .products-section .my-profile {
+    margin: 0 10px 0 10px;
+  }
+
   .products-section .products {
     grid-template-columns: 1fr;
   }
 
   .product-section {
     grid-template-columns: 1fr;
-    margin: 0 10px 0 10px;
+    margin: 0 10px 0 10px !important;
   }
 
   .product-section-subtitle {
@@ -364,6 +368,11 @@
     font-size: 17px;
   }
 
+  .cart-section .cart-totals {
+    flex-direction: column;
+    padding: 2px;
+  }
+
   .product-section-images {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -441,7 +450,7 @@
   }
 
   .my-orders .order-header-items div {
-    margin-right: 15px;
+    margin-right: 10px;
     font-size: 17px;
     font-weight: 500;
   }
@@ -482,6 +491,10 @@
     border-radius: 4px;
     box-sizing: border-box;
     word-wrap: break-word;
+  }
+
+  .login-container label {
+    font-size: 14px;
   }
 }
 

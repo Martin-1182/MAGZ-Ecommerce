@@ -5,6 +5,8 @@
         max-width: 960px;
     }
 }
+
+
 /* Medium Devices, Desktops */
 
 @media only screen and (max-width: 992px) {
@@ -96,8 +98,8 @@
         margin: 14px auto;
         width: 80%;
     }
-    .pagination > li > a,
-    .pagination > li > span {
+    .pagination>li>a,
+    .pagination>li>span {
         font-size: 10px;
     }
     .products-section {
@@ -107,13 +109,16 @@
             text-align: center;
             margin-top: 20px;
         }
+        .my-profile {
+            margin: 0 10px 0 10px;
+        }
         .products {
             grid-template-columns: 1fr;
         }
     }
     .product-section {
         grid-template-columns: 1fr;
-        margin: 0 10px 0 10px;
+        margin: 0 10px 0 10px!important;
     }
     .product-section-subtitle {
         font-size: 14px;
@@ -250,7 +255,7 @@
     .my-orders .order-header-items {
         display: block;
     }
-    .my-orders .order-header-items > div {
+    .my-orders .order-header-items>div {
         margin-bottom: 14px;
     }
     .aa-input-search {
@@ -292,6 +297,8 @@
         font-size: 14px;
     }
 }
+
+
 /* Small Devices, Tablets */
 
 @media only screen and (max-width: 768px) {
@@ -303,6 +310,10 @@
         label {
             font-size: 17px;
         }
+    }
+    .cart-section .cart-totals {
+        flex-direction: column;
+        padding: 2px;
     }
     .product-section-images {
         display: grid;
@@ -316,6 +327,8 @@
         position: relative;
     }
 }
+
+
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 480px) {
@@ -372,7 +385,7 @@
         display: flex;
     }
     .my-orders .order-header-items div {
-        margin-right: 15px;
+        margin-right: 10px;
         font-size: 17px;
         font-weight: 500;
     }
@@ -411,8 +424,12 @@
         box-sizing: border-box;
         word-wrap: break-word;
     }
+    .login-container label {
+        font-size: 14px;
+    }
 }
+
+
 /* Custom, iPhone Retina */
 
-@media only screen and (max-width: 320px) {
-}
+@media only screen and (max-width: 320px) {}
