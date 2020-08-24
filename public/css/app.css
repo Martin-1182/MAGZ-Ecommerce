@@ -19,6 +19,10 @@ a:visited {
   color: #212121 !important;
 }
 
+a:active {
+  color: #212121 !important;
+}
+
 a:hover {
   color: #878787;
 }

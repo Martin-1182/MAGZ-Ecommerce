@@ -4,6 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="author" content="WebSystem" href="https://websystem.sk">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="e-shop, webovú stránku, blog, aplikáciu, vývoj, design">
+    <meta name="description" content="Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a pokladničný systém s integráciou Stripe.
+Vyskúšajte nášu demo ecommerce aplikáciu s administračným rozhranním pre jednoduchú správu objednávok, produktov, komentárov a kategórií.">
+    <meta property="og:site_name" content="WebSystem">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:image:height" content="503">
+    <meta property="og:image:width" content="961">
+    <meta property="og:description"
+        content="Demo ecommerce aplikácia. Zahŕňa viac produktov, kategórií, nákupný košík a pokladničný systém s integráciou Stripe.
+Vyskúšajte nášu demo ecommerce aplikáciu s administračným rozhranním pre jednoduchú správu objednávok, produktov, komentárov a kategórií.">
+    <meta property="og:title" content="WebSystem | E-SHOP aplikácia elektronického obchodu">
+    <meta property="og:url" content="https://ecommerce.websystem.sk">
+    <meta property="og:image" content="{{ asset('og/fb-ecommerce-og.png') }}">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

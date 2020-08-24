@@ -3,7 +3,7 @@
         <div id="navbar">
             <a href="/">
                 <div class="logo" id="logo">
-                    <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="80" alt="Logo">
+                    <img src="{{ asset('img/WS-logo-blue-edit-v2.svg') }}" height="60" alt="Logo">
                 </div>
             </a>
             <div id="links">
